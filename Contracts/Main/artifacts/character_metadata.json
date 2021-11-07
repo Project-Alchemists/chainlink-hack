@@ -195,6 +195,52 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPlayerInfo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct character.playerInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -641,11 +687,11 @@
 	},
 	"sources": {
 		"Main/Player.sol": {
-			"keccak256": "0x0c32d53a4b37639aeca666da9962aedb633172e012e96e330dc2bc75cfc384ea",
+			"keccak256": "0x47b0fedde9d4d0652c12108e6e4b89068b9c74478a43dba4f1eef4c509763c89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3e237bab8b46132d4b835988347f9c56bb24d3b6b8ba9597e4ef1d5406bf458d",
-				"dweb:/ipfs/QmY1PPGfF1Brah6z4JMcT3rtB71TJCTVqPSzyJNARWXStT"
+				"bzz-raw://b2e6357b92c83b5dd925775741517573bd3578d27fa3f9532b8474974a724193",
+				"dweb:/ipfs/QmbDHVCik1chiggPNn2Tv4gfKV9mfma6sfLfQDQhCp95L3"
 			]
 		},
 		"Main/PriceFeeds.sol": {

@@ -136,5 +136,7 @@ contract character is ERC721Enumerable,Ownable{
         return players[_tokenId.current()];
     }
     
-    
+    function getPlayerInfo(uint tokenId) external view returns(playerInfo memory){
+        return players[tokenId];
+    }
 }
