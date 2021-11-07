@@ -94,6 +94,8 @@ contract character is ERC721Enumerable,Ownable{
             male = true;
         }
         int basePrice = feed.getPriceFeed(tetheredToken);
+        player1.lastMate = block.timestamp;
+        player2.lastMate = block.timestamp;
         players[_tokenId.current()] = playerInfo(
                                                 male,
                                                 tetheredToken,

@@ -687,11 +687,11 @@
 	},
 	"sources": {
 		"Main/Player.sol": {
-			"keccak256": "0x47b0fedde9d4d0652c12108e6e4b89068b9c74478a43dba4f1eef4c509763c89",
+			"keccak256": "0x538d7aab94d945f0764288a04e9620db1e4f9aa8e73effaeb245719b3e9bed49",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b2e6357b92c83b5dd925775741517573bd3578d27fa3f9532b8474974a724193",
-				"dweb:/ipfs/QmbDHVCik1chiggPNn2Tv4gfKV9mfma6sfLfQDQhCp95L3"
+				"bzz-raw://58bbf4a3ba650e770b8257897d7aa391d583de9802de37e1bf94aeb6ed2d8b32",
+				"dweb:/ipfs/Qma9JC3N4QVGnizbSePAt7AJ3rNNozm9VzHdbYg89b9Ygv"
 			]
 		},
 		"Main/PriceFeeds.sol": {
