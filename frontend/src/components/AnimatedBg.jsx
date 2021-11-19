@@ -6,6 +6,7 @@ export default function AnimatedBg() {
     <>
       <div className="background-container">
         <img
+          id="globe-img"
           src="https://www.pinclipart.com/picdir/big/163-1635292_planets-clipart-animated-globe-3d-model-of-earth.png"
           alt=""
         />

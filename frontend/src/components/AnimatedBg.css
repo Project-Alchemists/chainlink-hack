@@ -51,7 +51,7 @@
   left: 0;
   right: 0;
   display: block;
-  z-index: 0;
+  z-index: -1000;
 }
 
 .twinkling {
@@ -65,7 +65,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: -999;
 
   -moz-animation: move-background 70s linear infinite;
   -ms-animation: move-background 70s linear infinite;
@@ -93,7 +93,7 @@
   -webkit-animation: move-background 150s linear infinite;
   animation: move-background 150s linear infinite;
 }
-img {
+#globe-img {
   height: 70vh;
   width: 70vh;
   position: absolute;
