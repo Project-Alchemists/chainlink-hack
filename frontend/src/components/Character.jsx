@@ -12,10 +12,45 @@ export default function Character() {
 
   const [g_flipped, setG_flipped] = useState(false);
   const [b_flipped, setB_flipped] = useState(false);
+
+  const [selectedChar, setSelected] = useState([false, false]);
+  const [crypto, setCrypto] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const handleCrypto = (input) => {
+    var temp = [];
+
+    for (let i = 0; i < crypto.length; i++) {
+      temp[i] = false;
+    }
+
+    crypto[input] ? (temp[input] = false) : (temp[input] = true);
+
+    setCrypto(temp);
+  };
+
   return (
-    <>
+    <div className="main-screen">
       <div className="player-select">
-        <div className="player-select-box">
+        <div
+          className="player-select-box"
+          id={selectedChar[0] ? "selected" : "un"}
+          onClick={() => {
+            selectedChar[0]
+              ? setSelected([false, false])
+              : setSelected([true, false]);
+          }}
+        >
           <div className="button-div">
             <button
               className="flip-button"
@@ -86,7 +121,15 @@ export default function Character() {
             </svg>
           </div>
         </div>
-        <div className="player-select-box">
+        <div
+          className="player-select-box"
+          id={selectedChar[1] ? "selected" : "un"}
+          onClick={() => {
+            selectedChar[1]
+              ? setSelected([false, false])
+              : setSelected([false, true]);
+          }}
+        >
           <div className="button-div">
             <button
               className="flip-button"
@@ -98,57 +141,165 @@ export default function Character() {
               ></img>
             </button>
           </div>
-          <div
-            className={
-              b_flipped ? "player-select-image flipped" : "player-select-image"
-            }
-          >
-            <div className="flip-card-front">
-              <img
-                src={boyImage}
-                className="boy-image image-animate"
-                alt="male"
-              ></img>
-            </div>
-            <div className="flip-card-back">
-              <div className="back-title">More Info</div>
-              <div className="back-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia
-                doloribus unde voluptatibus repellendus explicabo delectus illum
-                reiciendis quaerat? Labore, molestiae.
+            <div
+              className={
+                b_flipped
+                  ? "player-select-image flipped"
+                  : "player-select-image"
+              }
+            >
+              <div className="flip-card-front">
+                <img
+                  src={boyImage}
+                  className="boy-image image-animate"
+                  alt="male"
+                ></img>
+              </div>
+              <div className="flip-card-back">
+                <div className="back-title">More Info</div>
+                <div className="back-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia
+                  doloribus unde voluptatibus repellendus explicabo delectus
+                  illum reiciendis quaerat? Labore, molestiae.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="player-select-gender">
-            <svg
-              className="svg-text"
-              id="male"
-              width="88"
-              height="28"
-              viewBox="0 0 88 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M27.724 1.08801V0.588013H27.224H23.732H23.408L23.2756 0.88376L14.516 20.456L5.75638 0.88376L5.62402 0.588013H5.3H1.772H1.272V1.08801V26V26.5H1.772H5.048H5.548V26V9.73273L12.9075 26.204L13.0398 26.5H13.364H15.668H15.9926L16.1247 26.2036L23.448 9.77388V26V26.5H23.948H27.224H27.724V26V1.08801Z"
-                stroke="white"
-              />
-              <path
-                d="M85.92 12.088V11.588H85.42H76.776V4.2H86.5H87V3.7V1V0.5H86.5H73H72.5V1V26.128V26.628H73H86.5H87V26.128V23.428V22.928H86.5H76.776V15.288H85.42H85.92V14.788V12.088Z"
-                stroke="white"
-              />
-              <path
-                d="M34.456 26.448H34.807L34.9263 26.1179L36.823 20.868H47.065L48.9618 26.1179L49.081 26.448H49.432H52.888H53.6009L53.3581 25.7777L44.3221 0.829728L44.2027 0.5H43.852H40.072H39.7218L39.6021 0.829128L30.5301 25.7771L30.2861 26.448H31H34.456ZM38.118 17.204L41.944 6.51562L45.77 17.204H38.118Z"
-                stroke="white"
-              />
-              <path
-                d="M69.56 23.428V22.928H69.06H60.776V1V0.5H60.276H57H56.5V1V26.092V26.592H57H69.06H69.56V26.092V23.428Z"
-                stroke="white"
-              />
-            </svg>
-          </div>
+            <div className="player-select-gender">
+              <svg
+                className="svg-text"
+                id="male"
+                width="88"
+                height="28"
+                viewBox="0 0 88 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27.724 1.08801V0.588013H27.224H23.732H23.408L23.2756 0.88376L14.516 20.456L5.75638 0.88376L5.62402 0.588013H5.3H1.772H1.272V1.08801V26V26.5H1.772H5.048H5.548V26V9.73273L12.9075 26.204L13.0398 26.5H13.364H15.668H15.9926L16.1247 26.2036L23.448 9.77388V26V26.5H23.948H27.224H27.724V26V1.08801Z"
+                  stroke="white"
+                />
+                <path
+                  d="M85.92 12.088V11.588H85.42H76.776V4.2H86.5H87V3.7V1V0.5H86.5H73H72.5V1V26.128V26.628H73H86.5H87V26.128V23.428V22.928H86.5H76.776V15.288H85.42H85.92V14.788V12.088Z"
+                  stroke="white"
+                />
+                <path
+                  d="M34.456 26.448H34.807L34.9263 26.1179L36.823 20.868H47.065L48.9618 26.1179L49.081 26.448H49.432H52.888H53.6009L53.3581 25.7777L44.3221 0.829728L44.2027 0.5H43.852H40.072H39.7218L39.6021 0.829128L30.5301 25.7771L30.2861 26.448H31H34.456ZM38.118 17.204L41.944 6.51562L45.77 17.204H38.118Z"
+                  stroke="white"
+                />
+                <path
+                  d="M69.56 23.428V22.928H69.06H60.776V1V0.5H60.276H57H56.5V1V26.092V26.592H57H69.06H69.56V26.092V23.428Z"
+                  stroke="white"
+                />
+              </svg>
+            </div>
+  
         </div>
       </div>
+      <div className="crypto-main">
+        <div className="crypto-select">
+          <button
+            onClick={() => handleCrypto(0)}
+            className={
+              crypto[0] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-1"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">BUSD</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(1)}
+            className={
+              crypto[1] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-2"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">DAI</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(2)}
+            className={
+              crypto[2] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-3"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">DSLA</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(3)}
+            className={
+              crypto[3] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-4"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">ETH</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(4)}
+            className={
+              crypto[4] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-5"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">LINK</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(5)}
+            className={
+              crypto[5] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-6"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">ONE</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(6)}
+            className={
+              crypto[6] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-7"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">SUSHI</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(7)}
+            className={
+              crypto[7] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-8"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">USDC</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(8)}
+            className={
+              crypto[8] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-9"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">USDT</div>
+          </button>
+          <button
+            onClick={() => handleCrypto(9)}
+            className={
+              crypto[9] ? "crypto-button button-press" : "crypto-button"
+            }
+            id="grid-10"
+          >
+            <div className="crypto-logo">O</div>
+            <div className="crypto-name">WBTC</div>
+          </button>
+        </div>
+      </div>
+
       <div className="btn-grp">
         <div className="back-btn" onClick={goBackFunc}>
           Go Back
@@ -157,6 +308,6 @@ export default function Character() {
           Next
         </div>
       </div>
-    </>
+    </div>
   );
 }
