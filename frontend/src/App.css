@@ -23,6 +23,9 @@ body {
   text-align: right;
 }
 .help-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   color: white;
   padding: 2rem 5rem;
   font-size: 1.2rem;
