@@ -8,13 +8,14 @@ body {
   text-align: center;
 }
 
-#selected{
+#selected {
   transform: scale(1.1);
   background-color: #62a89f33;
-  border: 2px solid #62a89f;
+  border: 1px solid #62a89f;
+  box-shadow: 0 0 20px #62a89f;
 }
 
-#un{
+#un {
   border: 2px solid transparent;
 }
 .home-bar {
@@ -122,7 +123,7 @@ body {
   font-family: monospace;
 }
 
-.back-title{
+.back-title {
   font-size: 30px;
   margin-bottom: 20px;
 }
@@ -147,7 +148,7 @@ body {
   transition: 0.5s ease-in-out;
 }
 
-.flip-button{
+.flip-button {
   all: unset;
   background-color: transparent;
   cursor: pointer;
@@ -165,7 +166,7 @@ body {
   transform: scale(1.1);
 }
 
-.player-select-box:hover .button-div{
+.player-select-box:hover .button-div {
   opacity: 1;
 }
 
@@ -270,27 +271,29 @@ body {
 }
 
 /* SVG end */
-.crypto-main{
+.crypto-main {
   margin-bottom: 60px;
   display: flex;
   justify-content: center;
 }
-.crypto-select{
+.crypto-select {
   border: 6px solid black;
   background-color: black;
   display: grid;
   grid-gap: 10px 5px;
   border-radius: 10px;
 }
-.crypto-button{
+.crypto-button {
   all: unset;
   width: 85px;
   font-size: 20px;
+  color: #000000;
   font-family: monospace;
   height: 100px;
   margin: auto;
   background-color: #1d1d1d;
-  box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.5), inset 0px 3px 5px -3px rgba(255, 255, 255, 0.295);
+  box-shadow: 0px 15px 8px 2px rgba(0, 0, 0, 0.5),
+    inset 0px 3px 5px -3px rgba(255, 255, 255, 0.295);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,19 +301,154 @@ body {
   cursor: pointer;
 }
 
-.crypto-logo{
+.crypto-button:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.5),
+    inset 0px 5px 5px -3px rgba(255, 255, 255, 0.295);
+}
+
+.crypto-logo {
   margin-bottom: 5px;
-  font-size: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button-press{
+.crypto-name {
+  margin-top: 5px;
+  transition: 0.3s all;
+  color: #555;
+}
+.crypto-logo-image {
+  height: 35px;
+  filter: grayscale(100%) opacity(30%) drop-shadow(0 0 0px #00000000); 
+  transition: 0.4s all;
+}
+
+.button-press {
   background-color: rgb(15, 15, 15);
-  color: #62a89f;
+  /* color: #62a89f; */
   box-shadow: inset 0px 0px 5px 0px black;
-  text-shadow: #94fdef 0px 0 20px;
+  /* text-shadow: #94fdef 0px 0 20px; */
 }
 
-#grid-1{
+.button-press:hover {
+  background-color: rgb(15, 15, 15);
+  /* color: #62a89f; */
+  box-shadow: inset 0px 0px 5px 0px black;
+  /* text-shadow: #94fdef 0px 0 20px; */
+}
+
+/* individual logo styling  */
+
+.button-press #name-busd,
+.button-press:hover #name-busd {
+  color: #f0b90b;
+  text-shadow: #ffd95d 0px 0 20px;
+}
+
+.button-press #img-busd {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #f0b90b);
+}
+
+.button-press #name-dai,
+.button-press:hover #name-dai {
+  color: #febe44;
+  text-shadow: #f8c76c 0px 0 20px;
+}
+
+.button-press #img-dai {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 10px #febd44a1);
+}
+
+.button-press #name-eth,
+.button-press:hover #name-eth {
+  color: #8c8c8c;
+  text-shadow: #cacaca 0px 0 20px;
+}
+
+.button-press #img-eth {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 10px #cacaca9a);
+}
+
+.button-press #name-link,
+.button-press:hover #name-link {
+  color: #496cb4;
+  text-shadow: #6183c9 0px 0 20px;
+}
+
+.button-press #img-link {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #6183c9);
+}
+
+.button-press #name-one,
+.button-press:hover #name-one {
+  color: #2accd7;
+  text-shadow: #69fabd 0px 0 20px;
+}
+
+.button-press #img-one {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #2accd7);
+}
+
+.button-press #name-sushi,
+.button-press:hover #name-sushi {
+  color: #fa52a0;
+  text-shadow: #fa52a0 0px 0 20px;
+}
+
+.button-press #img-sushi {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 10px #fa52a0d5);
+}
+
+.button-press #name-usdc,
+.button-press:hover #name-usdc {
+  color: #2775ca;
+  text-shadow: #5294db 0px 0 20px;
+}
+
+.button-press #img-usdc {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #2776caa6);
+}
+
+.button-press #name-usdt,
+.button-press:hover #name-usdt {
+  color: #62a89f;
+  text-shadow: #27d3a2 0px 0 20px;
+}
+
+.button-press #img-usdt {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #62a89fc2);
+}
+
+.button-press #name-wbtc,
+.button-press:hover #name-wbtc {
+  color: #f09242;
+  text-shadow: #f09242 0px 0 20px;
+}
+
+.button-press #img-wbtc {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #f09242);
+}
+
+
+.button-press #name-dsla,
+.button-press:hover #name-dsla {
+  color: #2196f3;
+  text-shadow: #2196f3 0px 0 20px;
+}
+
+.button-press #img-dsla {
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #2195f3ab);
+}
+
+#img-wbtc {
+  height: 40px;
+}
+/* individual styling end */
+
+#grid-1 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 1;
@@ -318,64 +456,63 @@ body {
   border-radius: 10px 0 0 10px;
 }
 
-#grid-2{
+#grid-2 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
-#grid-3{
+#grid-3 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 3;
   grid-column-end: 4;
 }
 
-#grid-4{
+#grid-4 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 4;
   grid-column-end: 5;
 }
 
-#grid-5{
+#grid-5 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 5;
   grid-column-end: 6;
 }
 
-#grid-6{
+#grid-6 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 6;
   grid-column-end: 7;
 }
 
-#grid-7{
+#grid-7 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 7;
   grid-column-end: 8;
 }
 
-#grid-8{
+#grid-8 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 8;
   grid-column-end: 9;
-  
 }
 
-#grid-9{
+#grid-9 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 9;
   grid-column-end: 10;
 }
 
-#grid-10{
+#grid-10 {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 10;

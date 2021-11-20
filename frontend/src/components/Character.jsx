@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import boyImage from "../../src/images/adult boy.svg";
 import girlImage from "../../src/images/adult girl.svg";
+import busd from "../../src/images/originals/busd.svg"
+import dai from "../../src/images/originals/dai.svg"
+import eth from "../../src/images/originals/ethereum.svg"
+import har from "../../src/images/originals/harmony.svg"
+import chain from "../../src/images/originals/chainlink.svg"
+import sushi from "../../src/images/originals/sushi.svg"
+import usdc from "../../src/images/originals/usdc.svg"
+import usdt from "../../src/images/originals/usdt.svg"
+import wbtc from "../../src/images/originals/wbtc.svg"
+import dsla from "../../src/images/originals/dsla.svg"
 
 export default function Character() {
   const navigate = useNavigate();
@@ -201,8 +211,8 @@ export default function Character() {
             }
             id="grid-1"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">BUSD</div>
+            <div className="crypto-logo"><img src={busd} className="crypto-logo-image" alt="" id="img-busd"></img></div>
+            <div className="crypto-name" id="name-busd">BUSD</div>
           </button>
           <button
             onClick={() => handleCrypto(1)}
@@ -211,8 +221,8 @@ export default function Character() {
             }
             id="grid-2"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">DAI</div>
+            <div className="crypto-logo"><img src={dai} className="crypto-logo-image" alt="" id="img-dai"></img></div>
+            <div className="crypto-name" id="name-dai">DAI</div>
           </button>
           <button
             onClick={() => handleCrypto(2)}
@@ -221,8 +231,8 @@ export default function Character() {
             }
             id="grid-3"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">DSLA</div>
+            <div className="crypto-logo"><img src={dsla} className="crypto-logo-image" alt="" id="img-dsla"></img></div>
+            <div className="crypto-name" id="name-dsla">DSLA</div>
           </button>
           <button
             onClick={() => handleCrypto(3)}
@@ -231,8 +241,8 @@ export default function Character() {
             }
             id="grid-4"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">ETH</div>
+            <div className="crypto-logo"><img src={eth} className="crypto-logo-image" alt="" id="img-eth"></img></div>
+            <div className="crypto-name" id="name-eth">ETH</div>
           </button>
           <button
             onClick={() => handleCrypto(4)}
@@ -241,8 +251,8 @@ export default function Character() {
             }
             id="grid-5"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">LINK</div>
+            <div className="crypto-logo"><img src={chain} className="crypto-logo-image" alt="" id="img-link"></img></div>
+            <div className="crypto-name" id="name-link">LINK</div>
           </button>
           <button
             onClick={() => handleCrypto(5)}
@@ -251,8 +261,8 @@ export default function Character() {
             }
             id="grid-6"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">ONE</div>
+            <div className="crypto-logo"><img src={har} className="crypto-logo-image" alt="" id="img-one"></img></div>
+            <div className="crypto-name" id="name-one">ONE</div>
           </button>
           <button
             onClick={() => handleCrypto(6)}
@@ -261,8 +271,8 @@ export default function Character() {
             }
             id="grid-7"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">SUSHI</div>
+            <div className="crypto-logo"><img src={sushi} className="crypto-logo-image" alt="" id="img-sushi"></img></div>
+            <div className="crypto-name" id="name-sushi">SUSHI</div>
           </button>
           <button
             onClick={() => handleCrypto(7)}
@@ -271,8 +281,8 @@ export default function Character() {
             }
             id="grid-8"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">USDC</div>
+            <div className="crypto-logo"><img src={usdc} className="crypto-logo-image" alt="" id="img-usdc"></img></div>
+            <div className="crypto-name" id="name-usdc">USDC</div>
           </button>
           <button
             onClick={() => handleCrypto(8)}
@@ -281,8 +291,8 @@ export default function Character() {
             }
             id="grid-9"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">USDT</div>
+            <div className="crypto-logo"><img src={usdt} className="crypto-logo-image" alt="" id="img-usdt"></img></div>
+            <div className="crypto-name" id="name-usdt">USDT</div>
           </button>
           <button
             onClick={() => handleCrypto(9)}
@@ -291,8 +301,8 @@ export default function Character() {
             }
             id="grid-10"
           >
-            <div className="crypto-logo">O</div>
-            <div className="crypto-name">WBTC</div>
+            <div className="crypto-logo"><img src={wbtc} className="crypto-logo-image" alt="" id="img-wbtc"></img></div>
+            <div className="crypto-name" id="name-wbtc">WBTC</div>
           </button>
         </div>
       </div>
