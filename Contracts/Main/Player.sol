@@ -8,10 +8,12 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 import "./Registry.sol";
 import "./PriceFeeds.sol";
 
-contract character is ERC721Enumerable,Ownable{
+contract Character is ERC721Enumerable,Ownable{
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenId;
+    Counters.Counter private _totalMaleSales;
+    Counters.Counter private _totalFemaleSales;
     
     Registry registry;    
 
@@ -21,11 +23,13 @@ contract character is ERC721Enumerable,Ownable{
         int tokenBaseline;
         uint birthDate;
         uint lastMate;
+        uint lastFed;
     }
 
-    uint public constant TOTAL_SUPPLY = 10000;
     uint public constant MINT_PRICE = 1 ether;
-    uint private totalSales;
+    
+    uint public constant MALE_SUPPLY = 5000;
+    uint public constant FEMALE_SUPPLY = 5000;
     
     mapping(uint=>playerInfo) players;
     mapping(uint=>string) imageCID;
@@ -38,7 +42,7 @@ contract character is ERC721Enumerable,Ownable{
         require(_exists(tokenId),"Token ID does not exist");
         playerInfo storage player = players[tokenId];
         uint age = block.timestamp - player.birthDate;
-        if (age < 120 days)
+        if (age < 120 days && (block.timestamp-player.lastFed) < 23 days)
         {
             if(player.isMale){
                 if(age > 90 days){
@@ -74,7 +78,7 @@ contract character is ERC721Enumerable,Ownable{
         }
     }
     
-    function mate(uint tokenId1,uint tokenId2,uint tetheredToken) external{
+    function mate(uint tokenId1,uint tokenId2) external{
         playerInfo storage player1 = players[tokenId1];
         playerInfo storage player2 = players[tokenId2];
         require(_exists(tokenId1) && _exists(tokenId2),"Invalid token IDs");
@@ -84,15 +88,19 @@ contract character is ERC721Enumerable,Ownable{
         require(player1.isMale != player2.isMale,"Need two separate gender tokens to mate");
         require(block.timestamp - player1.lastMate >= 10 days &&
                 block.timestamp - player2.lastMate >= 10 days,"Players need 10 day cool down after mating");
-                
+        require(player1.lastFed < 10 days && 
+                player2.lastFed < 10 days,"You can't make kids on an empty stomach");
+        //Check for age too TODO 
         PlayerPriceFeeds feed = PlayerPriceFeeds(registry.PriceFeedsContract());
-        require(tetheredToken < feed.getFeedsCount(),"Invalid tethered token");
         _tokenId.increment();
         _safeMint(msg.sender,_tokenId.current());
+        
         bool male;
-        if(vrf()%2 == 0){
+        uint randomness = vrf();
+        if(randomness%2 == 0){
             male = true;
         }
+        uint tetheredToken = randomness%feed.getFeedsCount();
         int basePrice = feed.getPriceFeed(tetheredToken);
         player1.lastMate = block.timestamp;
         player2.lastMate = block.timestamp;
@@ -101,9 +109,9 @@ contract character is ERC721Enumerable,Ownable{
                                                 tetheredToken,
                                                 basePrice,
                                                 (block.timestamp),
-                                                0
+                                                0,
+                                                block.timestamp
                                                 );
-        
     }
     
     function vrf() internal view returns (uint result) {
@@ -120,7 +128,14 @@ contract character is ERC721Enumerable,Ownable{
     }
     
     function mint(bool isMale,uint tetheredToken) external payable returns(playerInfo memory){
-        require(totalSales < TOTAL_SUPPLY,"No more tokens can be minted");
+        if(isMale){
+            require(_totalMaleSales.current()<MALE_SUPPLY,"No more males can be minted");
+            _totalMaleSales.increment();
+        }
+        else{
+            require(_totalFemaleSales.current()<FEMALE_SUPPLY,"No more females can be minted");
+            _totalFemaleSales.increment();
+        }
         PlayerPriceFeeds feed = PlayerPriceFeeds(registry.PriceFeedsContract());
         require(tetheredToken < feed.getFeedsCount(),"Invalid tethered token");
         require(msg.value >= MINT_PRICE,"Invalid amount paid");
@@ -131,14 +146,18 @@ contract character is ERC721Enumerable,Ownable{
                                                 tetheredToken,
                                                 basePrice,
                                                 (block.timestamp - 60 days),
-                                                0
+                                                0,
+                                                block.timestamp
                                                 );
         _safeMint(msg.sender,_tokenId.current());
-        totalSales += 1;
         return players[_tokenId.current()];
     }
     
     function getPlayerInfo(uint tokenId) external view returns(playerInfo memory){
         return players[tokenId];
+    }
+    
+    function getTokensMinted() external view returns(uint,uint){
+        return (_totalMaleSales.current(),_totalFemaleSales.current());
     }
 }
