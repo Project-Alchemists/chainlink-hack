@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  text-align: center;
+}
+.home-bar {
+  height: 80px;
+  background-color: #62a89f;
+  text-align: right;
+}
+.help-btn {
+  color: white;
+  padding: 2rem 5rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.home-mid {
+  margin: 10rem 5rem 10rem 5rem;
+}
+.home-title {
+  font-family: "Major Mono Display", monospace;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 10rem;
+}
+.home-start {
+  background-color: #62a89f;
+  border-radius: 10px;
+  width: 20%;
+  padding: 10px 0px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.instructions {
+  height: 500px;
+  border: solid #62a89f;
+  margin: 5rem 20rem;
+  text-align: center;
+  color: white;
+}
+.instructions-content {
+  padding: 2rem;
+}
+.back-btn {
+  background-color: #62a89f;
+  border-radius: 10px;
+  width: 10%;
+  padding: 8px;
+  margin-left: 5rem;
+  cursor: pointer;
+}
+.player-select {
+  height: 500px;
+  margin: 5rem 20rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.player-select-box {
+  height: 350px;
+  width: 30%;
+  border: solid #62a89f;
+  border-radius: 10px;
+  position: relative;
+  background-color: #62a89f33;
+  transition: 0.5s ease-in-out;
+}
+
+.player-select-gender {
+  width: 100%;
+  position: absolute;
+  margin-bottom: 15px;
+  bottom: 0;
+  transition: 0.5s ease-in-out;
+}
+.player-select-image {
+  /* border: 2px solid red; */
+  margin-top: 10px;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+  perspective: 1000px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  width: 100%;
+}
+
+.flip-card-back {
+  transform: rotateY(-180deg);
+  color: white;
+  padding: 15px;
+  font-family: monospace;
+}
+
+.back-title{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.boy-image {
+  width: 150px;
+}
+
+.girl-image {
+  width: 137px;
+}
+.btn-grp {
+  display: flex;
+  flex-direction: row;
+  gap: 60%;
+}
+.button-div {
+  display: flex;
+  padding-right: 20px;
+  padding-top: 10px;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.flip-button{
+  all: unset;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* SVG gender styling */
+
+/* 
+.player-select-box:hover .player-select-image,
+.player-select-box:hover .player-select-gender {
+  transform: scale(0.9);
+} */
+
+.player-select-box:hover {
+  transform: scale(1.1);
+}
+
+.player-select-box:hover .button-div{
+  opacity: 1;
+}
+
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+#male path,
+#female path {
+  transition: 0.1s ease-in-out;
+}
+
+.svg-text {
+  transition: 0.5s all;
+  fill: transparent;
+}
+
+.player-select-box:hover .svg-text {
+  fill: white;
+}
+
+#male path:nth-child(1) {
+  /* M */
+  stroke-dasharray: 186;
+  stroke-dashoffset: 186;
+  animation: stroke-anim 2s ease forwards 0.3s;
+}
+#male path:nth-child(2) {
+  /* E */
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: stroke-anim 2s ease forwards 1.2s;
+}
+#male path:nth-child(3) {
+  /* A */
+  stroke-dasharray: 121px;
+  stroke-dashoffset: 121px;
+  animation: stroke-anim 2s ease forwards 0.6s;
+}
+#male path:nth-child(4) {
+  /* L */
+  stroke-dasharray: 79px;
+  stroke-dashoffset: 79px;
+  animation: stroke-anim 2s ease forwards 0.9s;
+}
+
+.image-animate {
+  animation: fade-in 2s;
+}
+
+@keyframes stroke-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#female path:nth-child(1) {
+  /* M */
+  stroke-dasharray: 186;
+  stroke-dashoffset: 186;
+  animation: stroke-anim 2s ease forwards 0.6s;
+}
+#female path:nth-child(2) {
+  /* last E */
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: stroke-anim 2s ease forwards 1.2s;
+}
+#female path:nth-child(3) {
+  /* first E */
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: stroke-anim 2s ease forwards 0.4s;
+}
+#female path:nth-child(4) {
+  /* F */
+
+  stroke-dasharray: 101px;
+  stroke-dashoffset: 101px;
+  animation: stroke-anim 2s ease forwards 0.2s;
+}
+#female path:nth-child(5) {
+  /* A */
+  stroke-dasharray: 121px;
+  stroke-dashoffset: 121px;
+  animation: stroke-anim 2s ease forwards 0.8s;
+}
+#female path:nth-child(6) {
+  /* L */
+  stroke-dasharray: 79px;
+  stroke-dashoffset: 79px;
+  animation: stroke-anim 2s ease forwards 1s;
+}
