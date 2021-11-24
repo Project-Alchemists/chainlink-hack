@@ -1,0 +1,10 @@
+.mating-char-item {
+  border: solid red;
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+}
+.MatingCharCard-name {
+  color: white;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,33 @@
+.home-bar {
+  height: 80px;
+  background-color: #62a89f;
+  text-align: right;
+}
+.help-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  padding: 2rem 5rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.home-mid {
+  margin: 10rem 5rem 10rem 5rem;
+  text-align: left;
+}
+.home-title {
+  font-family: "Major Mono Display", monospace;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 10rem;
+}
+.home-start {
+  background-color: #62a89f;
+  border-radius: 10px;
+  width: 20%;
+  padding: 10px 0px;
+  cursor: pointer;
+  text-align: center;
+}
