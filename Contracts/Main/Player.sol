@@ -78,7 +78,7 @@ contract Character is ERC721Enumerable,Ownable{
         }
     }
     
-    function mate(uint tokenId1,uint tokenId2) external{
+    function mate(uint tokenId1,uint tokenId2) external returns(playerInfo memory){
         playerInfo storage player1 = players[tokenId1];
         playerInfo storage player2 = players[tokenId2];
         require(_exists(tokenId1) && _exists(tokenId2),"Invalid token IDs");
@@ -90,7 +90,9 @@ contract Character is ERC721Enumerable,Ownable{
                 block.timestamp - player2.lastMate >= 10 days,"Players need 10 day cool down after mating");
         require(player1.lastFed < 10 days && 
                 player2.lastFed < 10 days,"You can't make kids on an empty stomach");
-        //Check for age too TODO 
+        uint age1 = block.timestamp - player1.birthDate;
+        uint age2 = block.timestamp - player2.birthDate;
+        require(age1 > 60 days && age1 < 90 days && age2 > 60 days && age2 <90 days,"Only adults can be mated");
         PlayerPriceFeeds feed = PlayerPriceFeeds(registry.PriceFeedsContract());
         _tokenId.increment();
         _safeMint(msg.sender,_tokenId.current());
@@ -112,6 +114,7 @@ contract Character is ERC721Enumerable,Ownable{
                                                 0,
                                                 block.timestamp
                                                 );
+        return players[_tokenId.current()];
     }
     
     function vrf() internal view returns (uint result) {

@@ -312,7 +312,45 @@
 					}
 				],
 				"name": "mate",
-				"outputs": [],
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastFed",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Character.playerInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -723,11 +761,11 @@
 	},
 	"sources": {
 		"Main/Player.sol": {
-			"keccak256": "0x05d802f94be02ff04047ee4abcb5888acf42cfa0df87936014607258762cb526",
+			"keccak256": "0x0cf77ddbd7994e2f566e6ab7b5e9ff2b1d810545c6102478b57ce0d9ca9b130e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d16615b70187191204c5b6317cc94bc2d6bb155409a8eef2dd8253104988581c",
-				"dweb:/ipfs/QmV1cwemQCwRiVuEdTGHms1JK7D19CfK22K6Y42a393GDx"
+				"bzz-raw://cc82724bbcb6e636dc8d9941620e039817d74a73314a4bdd331f62aa2473494b",
+				"dweb:/ipfs/QmRVRCwH4i6NW5gbSnUaKXjbPGW578tZ41rd4AMqcJmW8M"
 			]
 		},
 		"Main/PriceFeeds.sol": {
