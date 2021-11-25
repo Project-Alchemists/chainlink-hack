@@ -1,17 +1,21 @@
+:root{
+    --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
+}
+
 .chardisp-main {
   width: 900px;
-  margin: 10px auto 10px auto;
+  margin: 20px auto 20px auto;
   height: 250px;
-  border: 2px solid;
+  border: 2px solid #62a89f85;
+  border-radius: 10px;
   display: grid;
   gap: 10px;
   padding: 10px;
   grid-template-columns: repeat(10, 10%);
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: repeat(4, 21%);
 }
 
 .chardisp-img {
-  /* border: 2px solid red; */
   grid-row-start: 1;
   grid-row-end: 4;
   grid-column-start: 1;
@@ -19,17 +23,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 0 5px 0;
+  padding: 10px 0 5px 0;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .list-image {
   height: 100%;
 }
 
+.list-heart {
+  width: 50px;
+  margin: 1px;
+}
 .list-token-contain {
-  border: 2px solid green;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 
 .chardisp-name {
@@ -37,13 +46,14 @@
   grid-column-end: 5;
   grid-row-start: 4;
   grid-row-end: 5;
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: monospace;
   color: #fff;
   font-size: 20px;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-age {
@@ -51,17 +61,17 @@
   grid-row-end: 4;
   grid-column-start: 4;
   grid-column-end: 5;
-  border: 2px solid rgb(98, 0, 255);
   font-family: monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   font-size: 20px;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-token {
-  border: 2px solid red;
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 3;
@@ -69,14 +79,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 .list-token {
   height: 100%;
+  max-width: 100%;
 }
 
 .list-token-name {
-  border: 2px solid red;
-  margin-left: 20px;
+  margin-left: 10px;
   height: 50px;
   width: 80px;
   display: flex;
@@ -92,13 +104,14 @@
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 4;
-  border: 2px solid rgb(98, 0, 255);
   font-family: monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   font-size: 20px;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-health {
@@ -106,7 +119,11 @@
   grid-row-end: 3;
   grid-column-start: 6;
   grid-column-end: 9;
-  border: 2px solid rgb(77, 56, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-hunger {
@@ -114,17 +131,18 @@
   grid-row-end: 5;
   grid-column-start: 6;
   grid-column-end: 9;
-  border: 2px solid rgb(0, 255, 234);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
-.hunger-percent{
-    color: white;
-    font-family: monospace;
-    margin-left: 10px;
-    font-size: 15px;
+.hunger-percent {
+  color: white;
+  font-family: monospace;
+  margin-left: 10px;
+  font-size: 15px;
 }
 
 .chardisp-hunstat {
@@ -132,7 +150,30 @@
   grid-row-end: 5;
   grid-column-start: 5;
   grid-column-end: 6;
-  border: 2px solid rgb(77, 56, 56);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
+}
+.hunger-stat {
+  font-family: monospace;
+  font-size: 18px;
+  color: white;
+}
+.hunger-stat-img {
+  width: 40px;
+}
+
+.health-stat {
+  font-family: monospace;
+  font-size: 18px;
+  color: white;
+}
+
+.health-stat-img {
+  width: 40px;
 }
 
 .chardisp-feed {
@@ -140,7 +181,11 @@
   grid-row-end: 5;
   grid-column-start: 9;
   grid-column-end: 10;
-  border: 2px solid rgb(77, 56, 56);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-helstat {
@@ -148,7 +193,12 @@
   grid-row-end: 3;
   grid-column-start: 5;
   grid-column-end: 6;
-  border: 2px solid rgb(77, 56, 56);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }
 
 .chardisp-hospital {
@@ -156,5 +206,9 @@
   grid-row-end: 3;
   grid-column-start: 9;
   grid-column-end: 10;
-  border: 2px solid rgb(77, 56, 56);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--soft);
 }

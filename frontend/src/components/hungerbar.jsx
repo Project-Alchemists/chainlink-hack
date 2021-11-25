@@ -3,17 +3,7 @@ import "./hungerbar.css"
 
 const Hunger = (props) => {
 
-    let col;
-
-    if (props.percent > 75){
-        col = "green"
-    }
-    else if (props.percent > 50){
-        col = "yellow"
-    }
-    else{
-        col = "red"
-    }
+    let col = "hsl("+ props.percent +", 100%, 40%)"
 
     const stylein = {
         width: props.percent + "%",
