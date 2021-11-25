@@ -303,12 +303,12 @@
 
 .button-press #name-link,
 .button-press:hover #name-link {
-  color: #496cb4;
+  color: #2a5ada;
   text-shadow: #6183c9 0px 0 20px;
 }
 
 .button-press #img-link {
-  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #6183c9);
+  filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px #2a5ada);
 }
 
 .button-press #name-one,

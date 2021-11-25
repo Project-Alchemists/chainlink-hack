@@ -29,46 +29,85 @@ const CharDisp = (props) => {
 
 
   let token;
+  let textstyle = {
+    color: "",
+    textShadow: "",
+  }
+  let imgstyle = {
+      filter: ""
+  }
 
   switch (props.token) {
     case "BUSD":
       token = busd;
+      imgstyle.filter = "drop-shadow(0 0 15px #f0b90b)"
+      textstyle.color = "#f0b90b"
+      textstyle.textShadow = "#ffd95d 0px 0 20px"
       break;
 
     case "DAI":
       token = dai;
+      imgstyle.filter = "drop-shadow(0 0 15px #febd44a1)"
+      textstyle.color = "#febe44"
+      textstyle.textShadow = "#f8c76c 0px 0 20px"
       break;
 
     case "DSLA":
       token = dsla;
+      imgstyle.filter = "drop-shadow(0 0 10px #2196f3)"
+      textstyle.color = "#2196f3"
+      textstyle.textShadow = "#2196f3 0px 0 20px"
       break;
 
     case "ETH":
       token = eth;
+      imgstyle.filter = "drop-shadow(0 0 15px #cacaca9a)"
+      textstyle.color = "#8c8c8c"
+      textstyle.textShadow = "#cacaca 0px 0 20px"
       break;
 
     case "LINK":
       token = chain;
+      imgstyle.filter = "drop-shadow(0 0 10px #2a5ada)"
+      textstyle.color = "#2a5ada"
+      textstyle.textShadow = "#6183c9 0px 0 20px"
+
       break;
 
     case "ONE":
       token = har;
+      imgstyle.filter = "drop-shadow(0 0 15px #2accd7)"
+      textstyle.color = "#2accd7"
+      textstyle.textShadow = "#69fabd 0px 0 20px"
       break;
 
     case "SUSHI":
       token = sushi;
+      imgstyle.filter = "drop-shadow(0 0 15px #fa52a0d5)"
+      textstyle.color = "#fa52a0"
+      textstyle.textShadow = "#fa52a0 0px 0 20px"
+
       break;
 
     case "USDC":
       token = usdc;
+      imgstyle.filter = "drop-shadow(0 0 15px #2775ca)"
+      textstyle.color = "#2775ca"
+      textstyle.textShadow = "#5294db 0px 0 20px"
       break;
 
     case "USDT":
       token = usdt;
+      imgstyle.filter = "drop-shadow(0 0 15px #62a89f)"
+      textstyle.color = "#62a89f"
+      textstyle.textShadow = "#27d3a2 0px 0 20px"
       break;
 
     case "WBTC":
       token = wbtc;
+      imgstyle.filter = "drop-shadow(0 0 15px #f09242)"
+      textstyle.color = "#f09242"
+      textstyle.textShadow = "#f09242 0px 0 20px"
       break;
 
     default:
@@ -99,9 +138,9 @@ const CharDisp = (props) => {
       </div>
       <div className="chardisp-token">
         <div className="list-token-contain">
-          <img src={token} alt="" className="list-token"></img>
+          <img src={token} alt="" className="list-token" style={imgstyle}></img>
         </div>
-        <div className="list-token-name">{props.token}</div>
+        <div className="list-token-name" style={textstyle}>{props.token}</div>
       </div>
       <div className="chardisp-name">{props.name}</div>
       <div className="chardisp-age">{props.age}</div>

@@ -9,7 +9,7 @@ export default function Home() {
     navigate("/help");
   };
   const startFunc = () => {
-    navigate("/character");
+    navigate("/buycharacter");
   };
   return (
     <div>
