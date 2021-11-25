@@ -1,5 +1,5 @@
-:root{
-    --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
+:root {
+  --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
 }
 
 .chardisp-main {
@@ -141,7 +141,7 @@
 .hunger-percent {
   color: white;
   font-family: monospace;
-  margin-left: 10px;
+  margin-right: 15px;
   font-size: 15px;
 }
 
