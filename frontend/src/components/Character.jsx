@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Character.css";
-import boyImage from "images/adult boy.svg";
-import girlImage from "images/adult girl.svg";
+import boyImage from "images/adult_boy.svg";
+import girlImage from "images/adult_girl.svg";
 import busd from "images/originals/busd.svg";
 import dai from "images/originals/dai.svg";
 import eth from "images/originals/ethereum.svg";
