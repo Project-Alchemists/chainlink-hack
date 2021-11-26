@@ -6,6 +6,8 @@ export default function Mating() {
   const [charList, setCharList] = useState([
     { name: "Sanskar", gender: "male" },
     { name: "Krimshanu", gender: "male" },
+    { name: "Ritvij", gender: "male" },
+    { name: "Arihant", gender: "male" },
     { name: "Shreya", gender: "female" },
     { name: "Aditi", gender: "female" },
   ]);
@@ -60,6 +62,7 @@ export default function Mating() {
               name={item.name}
               selectFunc={selectFunc}
               percent={100}
+              hearts={4}
             />
           ))}
         </div>
@@ -73,6 +76,8 @@ export default function Mating() {
                       name={mateMale.name}
                       gender={mateMale.gender}
                       deselectFunc={deselectFunc}
+                      percent={100}
+                      hearts={4}
                     />
                   )}
                 </div>
@@ -83,6 +88,8 @@ export default function Mating() {
                       name={mateFemale.name}
                       gender={mateFemale.gender}
                       deselectFunc={deselectFunc}
+                      percent={100}
+                      hearts={4}
                     />
                   )}
                 </div>
@@ -93,9 +100,15 @@ export default function Mating() {
             </>
           ) : (
             <>
-              <div className="mating-product">
-                <MatingCharCard name="Kriya" gender="female" />
-                <h4>🥳🥳🥳🥳</h4>
+              <div className="mating-product-container">
+                <div className="mating-product">
+                  <MatingCharCard
+                    name="Kriya"
+                    gender="female"
+                    percent={100}
+                    hearts={4}
+                  />
+                </div>
               </div>
               <button onClick={mateFunc}>
                 <h1>MATE Again!</h1>
@@ -111,6 +124,7 @@ export default function Mating() {
               name={item.name}
               selectFunc={selectFunc}
               percent={100}
+              hearts={4}
             />
           ))}
         </div>

@@ -9,27 +9,27 @@
   padding: 0 4rem;
 }
 .grid-item {
-  border: solid red;
+  border: 2px solid #62a89f85;
   height: 600px;
 }
 .mating-chars {
   display: grid;
+  padding: 10px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
   overflow: auto;
 }
 
 .mating-area {
-  border: solid red;
   height: 300px;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   margin-top: 30%;
   padding: 0px 50px;
+  border: 2px solid #62a89f85;
 }
 .mating-final {
-  border: solid red;
-
   align-self: center;
   align-items: center;
   justify-self: center;
@@ -39,9 +39,17 @@
   font-size: 4rem;
   justify-self: center;
 }
-.mating-product {
-  border: solid red;
+.mating-product-container {
+  border: 2px solid #62a89f85;
   height: 300px;
-  margin: auto;
   margin-top: 30%;
+}
+.mating-product {
+  border-radius: 10px;
+  box-shadow: var(--soft);
+  width: 200px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
