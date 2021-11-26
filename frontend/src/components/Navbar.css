@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #00000044;
+}
+.navbar > .navbar-logo {
+    font-weight: lighter;
+}
+.navbar > .navbar-logo::first-letter {
+    font-weight: 900;
+}
+.navbar > .navbar-items > span {
+    padding: 0 0 0 0.5rem;
+}
+.navbar > .navbar-items > span:first-child {
+    padding: 0;
+}
