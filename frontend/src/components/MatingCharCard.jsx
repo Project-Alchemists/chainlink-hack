@@ -1,6 +1,6 @@
 import React from "react";
-import adultBoy from "images/adult boy.svg";
-import adultGirl from "images/adult girl.svg";
+import adultBoy from "images/adult_boy.svg";
+import adultGirl from "images/adult_girl.svg";
 import Hunger from "./hungerbar";
 import fheart from "images/icons/heart-solid.svg";
 import eheart from "images/icons/heart-regular.svg";
