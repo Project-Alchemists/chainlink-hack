@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Mating.css";
 import MatingCharCard from "./MatingCharCard";
+import fheart from "../images/icons/heart-solid.svg";
 
 export default function Mating() {
   const [charList, setCharList] = useState([
@@ -81,7 +82,13 @@ export default function Mating() {
                     />
                   )}
                 </div>
-                <div className="mating-final plus-sign">+</div>
+                <div className="mating-final plus-sign">
+                  <img
+                    src={fheart}
+                    alt=""
+                    className="MatingCharCard-heart"
+                  ></img>
+                </div>
                 <div className="mating-final">
                   {mateFemale && (
                     <MatingCharCard
@@ -103,7 +110,7 @@ export default function Mating() {
               <div className="mating-product-container">
                 <div className="mating-product">
                   <MatingCharCard
-                    name="Kriya"
+                    name="Aarti"
                     gender="female"
                     percent={100}
                     hearts={4}
