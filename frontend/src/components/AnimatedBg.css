@@ -99,5 +99,7 @@
   position: absolute;
   z-index: 3;
   right: 20px;
-  top: 40px;
+  /* top: 40px; */
+  top: 50%;
+  transform: translateY(-50%);
 }
