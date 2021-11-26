@@ -124,9 +124,9 @@ const CharDisp = (props) => {
       empty = Array(4).fill(<img src={eheart} alt="" className="list-heart"></img>)
   }
 
-  let hosp = props.hearts > 2 ? [] : [<img src={ambu} alt="" className="list-heart"></img>]
+  let hosp = props.hearts > 2 ? [] : [<img src={ambu} alt="" className="list-hosp"></img>]
 
-  let feed = props.foodLast > 5 ? [<img src={eat} alt="" className="list-heart"></img>] : []
+  let feed = props.foodLast > 5 ? [<img src={eat} alt="" className="list-eat"></img>] : []
 
 
   
