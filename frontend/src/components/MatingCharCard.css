@@ -1,11 +1,14 @@
 .mating-char-item {
-	/* border: solid red; */
-	overflow: hidden;
-	padding: 10px;
-	cursor: pointer;
-
-	border-radius: 10px;
-	box-shadow: var(--soft);
+  /* border: solid red; */
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+  width: fit-content;
+  min-width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  border: 2px solid #62a89f;
+  /* box-shadow: var(--soft); */
 }
 
 .MatingCharCard-name {
@@ -19,7 +22,5 @@
 }
 
 .MatingCharCard-heart {
-	width: 25px;
-	margin-right: 5px;
-	color: red;
+  width: 25px;
 }
