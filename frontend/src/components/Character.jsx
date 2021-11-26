@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import "./Character.css";
->>>>>>> 2dcf91a5ea819b7e2362b3d17d50d58a1edb269c
-import boyImage from "../images/adult boy.svg";
-import girlImage from "../images/adult girl.svg";
-import busd from "../images/originals/busd.svg";
-import dai from "../images/originals/dai.svg";
-import eth from "../images/originals/ethereum.svg";
-import har from "../images/originals/harmony.svg";
-import chain from "../images/originals/chainlink.svg";
-import sushi from "../images/originals/sushi.svg";
-import usdc from "../images/originals/usdc.svg";
-import usdt from "../images/originals/usdt.svg";
-import wbtc from "../images/originals/wbtc.svg";
-import dsla from "../images/originals/dsla.svg";
+import boyImage from "images/adult boy.svg";
+import girlImage from "images/adult girl.svg";
+import busd from "images/originals/busd.svg";
+import dai from "images/originals/dai.svg";
+import eth from "images/originals/ethereum.svg";
+import har from "images/originals/harmony.svg";
+import chain from "images/originals/chainlink.svg";
+import sushi from "images/originals/sushi.svg";
+import usdc from "images/originals/usdc.svg";
+import usdt from "images/originals/usdt.svg";
+import wbtc from "images/originals/wbtc.svg";
+import dsla from "images/originals/dsla.svg";
 
 export default function Character() {
-  const navigate = useNavigate();
-  const goBackFunc = () => {
-    navigate("/");
-  };
-  const nextFunc = () => {
-    navigate("/characterlist")
-  };
+	const navigate = useNavigate();
+	const goBackFunc = () => {
+		navigate("/");
+	};
+	const nextFunc = () => {
+		navigate("/characterlist");
+	};
 
 	const [g_flipped, setG_flipped] = useState(false);
 	const [b_flipped, setB_flipped] = useState(false);

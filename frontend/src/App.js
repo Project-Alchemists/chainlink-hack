@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import Instructions from "./components/Instructions";
-import Character from "./components/Character";
-import CharList from "./components/charList";
-import Mating from "./components/Mating";
+import Home from "components/Home";
+import Instructions from "components/Instructions";
+import Character from "components/Character";
+import CharList from "components/charList";
+import Mating from "components/Mating";
+import Wallet from "components/Wallet";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/buycharacter" element={<Character />} />
 				<Route path="/characterlist" element={<CharList />} />
 				<Route path="/mating" element={<Mating />} />
+				<Route path="/wallet" element={<Wallet />} />
 			</Routes>
 		</Router>
 	);
