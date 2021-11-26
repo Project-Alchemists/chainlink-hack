@@ -1,0 +1,22 @@
+.mating-char-item {
+  /* border: solid red; */
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  box-shadow: var(--soft);
+}
+.MatingCharCard-name {
+  color: white;
+  margin-bottom: 5px;
+}
+.MatingCharCard-health {
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+.MatingCharCard-heart {
+  width: 25px;
+  margin-right: 5px;
+  color: red;
+}

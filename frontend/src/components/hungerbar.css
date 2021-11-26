@@ -1,0 +1,7 @@
+.hunger-main {
+  border-radius: 500px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+  border: 1px solid #62a89f;
+  margin: auto;
+}

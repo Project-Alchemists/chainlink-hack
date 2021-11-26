@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedBg from "./AnimatedBg";
+import "./Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ export default function Home() {
     navigate("/help");
   };
   const startFunc = () => {
-    navigate("/character");
+    navigate("/buycharacter");
   };
   return (
     <div>

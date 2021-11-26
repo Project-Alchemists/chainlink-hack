@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import "./Character.css";
+>>>>>>> 2dcf91a5ea819b7e2362b3d17d50d58a1edb269c
 import boyImage from "../images/adult boy.svg";
 import girlImage from "../images/adult girl.svg";
 import busd from "../images/originals/busd.svg";
@@ -14,11 +18,13 @@ import wbtc from "../images/originals/wbtc.svg";
 import dsla from "../images/originals/dsla.svg";
 
 export default function Character() {
-	const navigate = useNavigate();
-	const goBackFunc = () => {
-		navigate("/");
-	};
-	const nextFunc = () => {};
+  const navigate = useNavigate();
+  const goBackFunc = () => {
+    navigate("/");
+  };
+  const nextFunc = () => {
+    navigate("/characterlist")
+  };
 
 	const [g_flipped, setG_flipped] = useState(false);
 	const [b_flipped, setB_flipped] = useState(false);
