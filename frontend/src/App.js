@@ -8,7 +8,7 @@ import CharList from "components/charList";
 import Mating from "components/Mating";
 import Wallet from "components/Wallet";
 
-function App() {
+const App = () => {
 	return (
 		<Router>
 			<Routes>
@@ -21,6 +21,6 @@ function App() {
 			</Routes>
 		</Router>
 	);
-}
+};
 
 export default App;

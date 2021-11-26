@@ -12,19 +12,23 @@ export default function Mating() {
 		{ name: "Shreya", gender: "female" },
 		{ name: "Aditi", gender: "female" },
 	]);
+
 	const [maleCharList] = useState(
 		charList.filter(item => {
 			return item.gender === "male";
 		})
 	);
+
 	const [femaleCharList] = useState(
 		charList.filter(item => {
 			return item.gender === "female";
 		})
 	);
+
 	const [mateStatus, setMateStatus] = useState(false);
 	const [mateMale, setMateMale] = useState();
 	const [mateFemale, setMateFemale] = useState();
+
 	const selectFunc = name => {
 		const selectedItem = charList.filter(item => {
 			return item.name === name;
@@ -36,6 +40,7 @@ export default function Mating() {
 		}
 		console.log(selectedItem);
 	};
+
 	const deselectFunc = gender => {
 		if (gender === "male") {
 			setMateMale();
@@ -43,6 +48,7 @@ export default function Mating() {
 			setMateFemale();
 		}
 	};
+
 	const mateFunc = () => {
 		if ((!mateMale || !mateFemale) && !mateStatus) {
 			alert("Choose mates!!");
@@ -52,6 +58,7 @@ export default function Mating() {
 			setMateStatus(prev => !prev);
 		}
 	};
+
 	return (
 		<div className="mating-container">
 			<div className="mating-master">
