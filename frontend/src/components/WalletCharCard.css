@@ -1,4 +1,4 @@
-.mating-char-item {
+.wallet-char-item {
 	/* border: solid red; */
 	overflow: hidden;
 	padding: 10px;
@@ -8,17 +8,17 @@
 	box-shadow: var(--soft);
 }
 
-.MatingCharCard-name {
+.walletCharCard-name {
 	color: white;
 	margin-bottom: 5px;
 }
 
-.MatingCharCard-health {
+.walletCharCard-health {
 	margin-top: 10px;
 	letter-spacing: 2px;
 }
 
-.MatingCharCard-heart {
+.walletCharCard-heart {
 	width: 25px;
 	margin-right: 5px;
 	color: red;

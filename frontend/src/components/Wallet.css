@@ -1,18 +1,21 @@
-.mating-container {
+.wallet-container {
 	display: grid;
 	height: 100vh;
 }
-.mating-master {
+
+.wallet-master {
 	align-self: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	padding: 0 4rem;
 }
+
 .grid-item {
 	border: 2px solid #62a89f85;
 	height: 600px;
 }
-.mating-chars {
+
+.wallet-chars {
 	display: grid;
 	padding: 10px;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -21,7 +24,7 @@
 	overflow: auto;
 }
 
-.mating-area {
+.wallet-area {
 	height: 300px;
 	display: grid;
 	grid-template-columns: 2fr 1fr 2fr;
@@ -29,22 +32,26 @@
 	padding: 0px 50px;
 	border: 2px solid #62a89f85;
 }
-.mating-final {
+
+.wallet-final {
 	align-self: center;
 	align-items: center;
 	justify-self: center;
 }
+
 .plus-sign {
 	color: white;
 	font-size: 4rem;
 	justify-self: center;
 }
-.mating-product-container {
+
+.wallet-product-container {
 	border: 2px solid #62a89f85;
 	height: 300px;
 	margin-top: 30%;
 }
-.mating-product {
+
+.wallet-product {
 	border-radius: 10px;
 	box-shadow: var(--soft);
 	width: 200px;
