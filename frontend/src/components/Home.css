@@ -14,8 +14,14 @@
   cursor: pointer;
 }
 .home-mid {
-  margin: 10rem 5rem 10rem 5rem;
+  margin: 0 5rem;
   text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
 }
 .home-title {
   font-family: "Major Mono Display", monospace;
@@ -30,4 +36,49 @@
   padding: 10px 0px;
   cursor: pointer;
   text-align: center;
+}
+
+.help-section-indicator {
+    position: relative;
+
+    color: white;
+    font-size: large;
+
+    padding: 1rem;
+    top: -3rem;
+
+    cursor: pointer;
+}
+.help-section-indicator img {
+    filter: invert(1);
+}
+.help-section-indicator > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    margin-left: auto;
+    text-decoration: none;
+    color: white;
+}
+.help-section {
+    color: white;
+    background-color: #eeeeee55;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    
+    counter-reset: instructions-counter;
+}
+.help-section div {
+    padding: 0.5rem;
+    color: white;
+}
+.help-section div::before {
+    counter-increment: instructions-counter;
+    content: counter(instructions-counter);
+
+    color: grey;
+    margin-right: 0.5rem;
 }
