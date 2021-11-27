@@ -3,6 +3,7 @@ import "./Mating.css";
 import MatingCharCard from "./MatingCharCard";
 import fheart from "../images/icons/heart-solid.svg";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "./customButton";
 
 export default function Mating() {
 
@@ -59,7 +60,7 @@ export default function Mating() {
   return (
     <div className="mating-container">
       <div className="mating-master">
-        <div className="grid-item mating-chars">
+        <div className="grid-mating-item mating-chars">
           <div className="grid-flex-parent">
             {maleCharList.map((item, index) => (
               <MatingCharCard
@@ -73,7 +74,7 @@ export default function Mating() {
             ))}
           </div>
         </div>
-        <div className="grid-item">
+        <div className="grid-mating-item">
           {!mateStatus ? (
             <>
               <div className="mating-area">
@@ -107,9 +108,7 @@ export default function Mating() {
                   )}
                 </div>
               </div>
-              <button onClick={mateFunc}>
-                <h1>MATE</h1>
-              </button>
+              <CustomButton onClick={mateFunc} text="mate"/>
             </>
           ) : (
             <>
@@ -126,13 +125,11 @@ export default function Mating() {
                   />
                 </div>
               </div>
-              <button onClick={mateFunc}>
-                <h1>MATE Again!</h1>
-              </button>
+              <CustomButton onClick={mateFunc} text="mate again" />
             </>
           )}
         </div>
-        <div className="grid-item mating-chars">
+        <div className="grid-mating-item mating-chars">
           <div className="grid-flex-parent">
             {femaleCharList.map((item, index) => (
               <MatingCharCard

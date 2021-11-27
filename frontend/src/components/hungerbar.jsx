@@ -2,17 +2,13 @@ import React from "react";
 import "./hungerbar.css";
 
 const Hunger = props => {
-	let col = "hsl(" + props.percent + ", 100%, 40%)";
+	let col = "hsl(" + props.percent + ", 100%, 50%)";
 
-<<<<<<< Updated upstream
 	const stylein = {
 		width: props.percent + "%",
 		height: "100%",
 		backgroundColor: col,
 	};
-=======
-    let col = "hsl("+ props.percent +", 100%, 50%)"
->>>>>>> Stashed changes
 
 	const styleout = {
 		width: props.width,

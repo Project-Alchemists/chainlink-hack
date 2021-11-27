@@ -1,0 +1,13 @@
+.custom-button-styling{
+    all: unset;
+    border: 2px solid #62a89f;
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.custom-button-styling:hover{
+    background-color: #62a89f;
+}

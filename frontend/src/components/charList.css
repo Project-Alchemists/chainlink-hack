@@ -4,8 +4,8 @@
 
 .list-main {
   width: 95vw;
-  margin: 20px auto 20px auto;
-  height: 95vh;
+  margin: 10vh auto 20px auto;
+  height: 90vh;
   padding: 20px;
   display: grid;
   grid-template-columns: auto auto;

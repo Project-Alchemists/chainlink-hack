@@ -132,6 +132,7 @@ const CharList = props => {
                 percent={item.percent}
                 hearts={item.hearts}
                 foodLast={item.foodLast}
+                age={item.age}
               />
             ))}
 
