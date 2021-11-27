@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
 :root{
   --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
+  --mmd: 'Major Mono Display', monospace;
 }
 
 .list-main {
@@ -46,7 +49,8 @@
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
-  border: 2px solid red;
+  height: 50px;
+  padding-left: 5px;
 }
 
 .icon-image{
@@ -74,10 +78,9 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
-  font-family: monospace;
+  font-family: var(--mmd);
   width: 65px;
   height: 50px;
-  border: 2px solid red;
 }
 
 .list-child {

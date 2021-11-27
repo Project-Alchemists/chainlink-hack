@@ -26,6 +26,7 @@
     text-decoration: none;
     color: white;
     transition: 0.5s;
+    font-family: 'Comfortaa', cursive;
 }
 .navbar > .navbar-items > span:first-child {
     padding: 0;

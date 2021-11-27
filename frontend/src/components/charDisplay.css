@@ -1,5 +1,6 @@
 :root {
   --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
+  --mmd: 'Major Mono Display', monospace;
 }
 
 .chardisp-main {
@@ -49,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: monospace;
+  font-family: var(--mmd);
   color: #fff;
   font-size: 20px;
   border-radius: 10px;
@@ -61,12 +62,12 @@
   grid-row-end: 4;
   grid-column-start: 4;
   grid-column-end: 5;
-  font-family: monospace;
+  font-family: var(--mmd);
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 10px;
   box-shadow: var(--soft);
 }
@@ -104,12 +105,13 @@
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 4;
-  font-family: monospace;
+  font-family: var(--mmd);
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
+  text-transform: lowercase;
   border-radius: 10px;
   box-shadow: var(--soft);
 }
@@ -140,8 +142,9 @@
 
 .hunger-percent {
   color: white;
-  font-family: monospace;
+  font-family: var(--mmd);
   margin-right: 15px;
+  margin-left: -15px;
   font-size: 15px;
 }
 
@@ -158,8 +161,8 @@
   box-shadow: var(--soft);
 }
 .hunger-stat {
-  font-family: monospace;
-  font-size: 18px;
+  font-family: var(--mmd);
+  font-size: 15px;
   color: white;
 }
 .hunger-stat-img {
@@ -167,8 +170,8 @@
 }
 
 .health-stat {
-  font-family: monospace;
-  font-size: 18px;
+  font-family: var(--mmd);
+  font-size: 15px;
   color: white;
 }
 

@@ -5,6 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--mmd);
+    text-transform: lowercase;
     color: white;
     border-radius: 10px;
     transition: 0.5s;

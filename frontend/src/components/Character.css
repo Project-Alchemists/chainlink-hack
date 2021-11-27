@@ -454,11 +454,21 @@
   all: unset;
   border-radius: 10px;
   box-shadow: var(--soft);
-  font-size: 1.4rem;
-  color: rgb(133, 133, 133);
+  font-size: 1rem;
+  color: white;
+  font-family: 'Comfortaa', cursive;
   padding: 7px 10px;
+  transition: 0.4s;
+  border: 2px solid transparent;
+  width: 400px;
+}
+
+.newCharName-input:focus{
+  border: 2px solid #62a89f;
+  box-shadow: var(--soft), 0px 0px 10px 2px #62a89f;
 }
 
 .newCharName-input::placeholder{
-  color: #353535;
+  color: #555555;
+  font-size: 0.8rem;
 }

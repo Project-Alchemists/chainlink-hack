@@ -6,6 +6,7 @@ import fheart from "images/icons/heart-solid.svg";
 import eheart from "images/icons/heart-regular.svg";
 import "./WalletCharCard.css";
 import "./Wallet.css";
+import CustomButton from "./customButton";
 
 const CharacterCard = (props) => {
   let full, empty;
@@ -39,7 +40,7 @@ const CharacterCard = (props) => {
           {empty}
         </div>
         <div className="walletCharCard-button">
-          <button>Recieve Wage</button>
+          <CustomButton text="Receive Wage" />
         </div>
       </div>
     </div>
@@ -69,7 +70,7 @@ const Wallet = (props) => {
             gender="male"
             name={item.name}
             percent={100}
-            hearts={4}
+            hearts={3}
           />
         ))}
       </div>

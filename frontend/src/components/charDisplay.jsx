@@ -161,7 +161,7 @@ const CharDisp = (props) => {
       </div>
       <div className="chardisp-hospital">{hosp}</div>
       <div className="chardisp-helstat">
-        <div className="health-stat">Health</div>
+        <div className="health-stat">health</div>
         <img className="h-stat-img" src={helstat} alt=""></img>
       </div>
       <div className="chardisp-hunger">
@@ -169,7 +169,7 @@ const CharDisp = (props) => {
         <div className="hunger-percent">{props.percent}%</div>
       </div>
       <div className="chardisp-hunstat">
-        <div className="hunger-stat">Hunger</div>
+        <div className="hunger-stat">hunger</div>
         <img className="h-stat-img" src={status} alt=""></img>
       </div>
       <div className="chardisp-feed" onClick={() => {console.log(props.uid)}}>{feed}</div>
