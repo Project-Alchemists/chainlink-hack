@@ -1,5 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
+import MetamaskButton from "./MetamaskButton";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -8,7 +9,7 @@ const Navbar = () => {
       <nav className={"navbar"}>
         <div className={"navbar-logo"}>
           <span>
-            <Link to={"/"}>{"CHAINLINNK"}</Link>
+            <Link to={"/"}>{"CHAINLINK"}</Link>
           </span>
         </div>
         <div className={"navbar-items"}>
@@ -23,6 +24,9 @@ const Navbar = () => {
           </span>
           <span>
             <Link to={"/mating"}>{"Mating"}</Link>
+          </span>
+          <span>
+            <MetamaskButton />
           </span>
         </div>
       </nav>
