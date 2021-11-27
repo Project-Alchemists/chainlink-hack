@@ -57,7 +57,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   padding: 0px 50px;
-  /* border: 2px solid #62a89f85; */
+  margin-top: 30%;
 }
 .mating-final {
 	align-self: center;
@@ -70,10 +70,8 @@
   padding: 10px;
 }
 .mating-product-container {
-  /* border: 2px solid #62a89f85; */
   height: 50%;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
