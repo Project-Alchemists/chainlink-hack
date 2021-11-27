@@ -1,0 +1,25 @@
+.wallet-char-item {
+	/* border: solid red; */
+	overflow: hidden;
+	padding: 10px;
+	cursor: pointer;
+
+	border-radius: 20px;
+	box-shadow: var(--soft);
+}
+
+.walletCharCard-name {
+	color: white;
+	margin-bottom: 5px;
+}
+
+.walletCharCard-health {
+	margin-top: 10px;
+	letter-spacing: 2px;
+}
+
+.walletCharCard-heart {
+	width: 25px;
+	margin-right: 2px;
+	color: red;
+}

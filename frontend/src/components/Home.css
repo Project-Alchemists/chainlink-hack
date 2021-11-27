@@ -1,0 +1,96 @@
+.home-bar {
+  height: 80px;
+  background-color: #62a89f;
+  text-align: right;
+}
+.help-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  padding: 2rem 5rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.home-mid {
+  margin: 0 5rem;
+  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.home-title {
+  font-family: "Major Mono Display", monospace;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 10rem;
+}
+.home-start {
+  background-color: #62a89f;
+  border-radius: 10px;
+  width: 20%;
+  padding: 10px 0px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.help-section-indicator {
+  position: relative;
+
+  color: white;
+  font-size: large;
+
+  padding: 1rem;
+  top: -3rem;
+
+  cursor: pointer;
+}
+.help-section-indicator img {
+  filter: invert(1);
+}
+.help-section-indicator > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  margin-left: auto;
+  text-decoration: none;
+  color: white;
+}
+.help-section {
+  color: white;
+  background-color: #eeeeee55;
+  padding: 1rem;
+  border-radius: 1rem 1rem 0 0;
+
+  counter-reset: instructions-counter;
+}
+.help-section div {
+  padding: 0.5rem;
+  color: white;
+}
+.help-section div::before {
+  counter-increment: instructions-counter;
+  content: counter(instructions-counter);
+
+  color: grey;
+  margin-right: 0.5rem;
+}
+.metaMask-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.metaMask-btn-txt {
+  font-size: 1rem;
+}
