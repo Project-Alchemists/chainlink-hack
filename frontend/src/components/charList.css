@@ -23,9 +23,11 @@
 
 .mating-main-button{
   width: 100%;
-  border: 2px solid #62a89f;
+
   border-radius: 10px;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .ration-main{
@@ -36,6 +38,7 @@
   border-radius: 10px;
   padding-top: 20px;
   padding-bottom: -10px;
+  justify-content: space-evenly;
 }
 
 .ration-icon{
@@ -43,6 +46,7 @@
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
+  border: 2px solid red;
 }
 
 .icon-image{

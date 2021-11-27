@@ -6,6 +6,7 @@ const CustomButton = (props) => {
     const styles = {
         width: props.width,
         height: props.height,
+        fontSize: props.height
 
     }
     return(

@@ -123,25 +123,25 @@
   /* M */
   stroke-dasharray: 186;
   stroke-dashoffset: 186;
-  animation: stroke-anim 2s ease forwards 0.3s;
+  animation: stroke-anim 1.5s ease forwards 0.3s;
 }
 #male path:nth-child(2) {
   /* E */
   stroke-dasharray: 120;
   stroke-dashoffset: 120;
-  animation: stroke-anim 2s ease forwards 1.2s;
+  animation: stroke-anim 1.5s ease forwards 1.2s;
 }
 #male path:nth-child(3) {
   /* A */
   stroke-dasharray: 121px;
   stroke-dashoffset: 121px;
-  animation: stroke-anim 2s ease forwards 0.6s;
+  animation: stroke-anim 1.5s ease forwards 0.6s;
 }
 #male path:nth-child(4) {
   /* L */
   stroke-dasharray: 79px;
   stroke-dashoffset: 79px;
-  animation: stroke-anim 2s ease forwards 0.9s;
+  animation: stroke-anim 1.5s ease forwards 0.9s;
 }
 
 .image-animate {
@@ -167,38 +167,38 @@
   /* M */
   stroke-dasharray: 186;
   stroke-dashoffset: 186;
-  animation: stroke-anim 2s ease forwards 0.6s;
+  animation: stroke-anim 1.5s ease forwards 0.6s;
 }
 #female path:nth-child(2) {
   /* last E */
   stroke-dasharray: 120;
   stroke-dashoffset: 120;
-  animation: stroke-anim 2s ease forwards 1.2s;
+  animation: stroke-anim 1.5s ease forwards 1.2s;
 }
 #female path:nth-child(3) {
   /* first E */
   stroke-dasharray: 120;
   stroke-dashoffset: 120;
-  animation: stroke-anim 2s ease forwards 0.4s;
+  animation: stroke-anim 1.5s ease forwards 0.4s;
 }
 #female path:nth-child(4) {
   /* F */
 
   stroke-dasharray: 101px;
   stroke-dashoffset: 101px;
-  animation: stroke-anim 2s ease forwards 0.2s;
+  animation: stroke-anim 1.5s ease forwards 0.2s;
 }
 #female path:nth-child(5) {
   /* A */
   stroke-dasharray: 121px;
   stroke-dashoffset: 121px;
-  animation: stroke-anim 2s ease forwards 0.8s;
+  animation: stroke-anim 1.5s ease forwards 0.8s;
 }
 #female path:nth-child(6) {
   /* L */
   stroke-dasharray: 79px;
   stroke-dashoffset: 79px;
-  animation: stroke-anim 2s ease forwards 1s;
+  animation: stroke-anim 1.5s ease forwards 1s;
 }
 
 /* SVG end */
@@ -457,4 +457,8 @@
   font-size: 1.4rem;
   color: rgb(133, 133, 133);
   padding: 7px 10px;
+}
+
+.newCharName-input::placeholder{
+  color: #353535;
 }

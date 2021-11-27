@@ -9,10 +9,10 @@ const Navbar = () => {
             <div className={"navbar-logo"}>{"CHAINLINK"}</div>
             <div className={"navbar-items"}>
                <span>
-                  <Link to={"/link1"}>{"Link 1"}</Link>
+                  <Link to={"/characterlist"}>{"List All"}</Link>
                </span>
                <span>
-                  <Link to={"/link1"}>{"Link 1"}</Link>
+                  <Link to={"/buycharacter"}>{"Buy New"}</Link>
                </span>
                <span>
                   <Link to={"/link1"}>{"Link 1"}</Link>

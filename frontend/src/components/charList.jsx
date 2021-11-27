@@ -3,6 +3,7 @@ import CharDisp from "./charDisplay";
 import "./charList.css";
 import rationimage from "../images/icons/ration.svg";
 import { useNavigate } from "react-router";
+import CustomButton from "./customButton";
 
 const CharList = props => {
 	const navigate = useNavigate();
@@ -15,9 +16,7 @@ const CharList = props => {
       ration > 0
         ? []
         : [
-            <button className="ration-button" onClick={handleRation}>
-              buy ration
-            </button>,
+            <CustomButton onClick={handleRation} text="buy ration" height={10}/>,
           ]
     );
   }, [ration]); // render button based on ration amount
@@ -147,9 +146,7 @@ const CharList = props => {
           <div className="ration-buy">{rbutton}</div>
         </div>
         <div className="mating-main-button">
-          <button className="mating-link-to" onClick={toMating}>
-            go to mating
-          </button>
+          <CustomButton onClick={toMating} text="go to mating" />
         </div>
       </div>
     </div>

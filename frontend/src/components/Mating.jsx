@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "./customButton";
 
 export default function Mating() {
-
   const navigate = useNavigate();
 
   const [charList, setCharList] = useState([
@@ -108,7 +107,11 @@ export default function Mating() {
                   )}
                 </div>
               </div>
-              <CustomButton onClick={mateFunc} text="mate"/>
+              <div
+                style={{ margin: "0px auto 0px auto", width: "fit-content" }}
+              >
+                <CustomButton onClick={mateFunc} text="mate" />
+              </div>
             </>
           ) : (
             <>
@@ -125,7 +128,11 @@ export default function Mating() {
                   />
                 </div>
               </div>
-              <CustomButton onClick={mateFunc} text="mate again" />
+              <div
+                style={{ margin: "0px auto 0px auto", width: "fit-content" }}
+              >
+                <CustomButton onClick={mateFunc} text="mate again" />
+              </div>
             </>
           )}
         </div>

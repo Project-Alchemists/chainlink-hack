@@ -13,6 +13,7 @@ import usdc from "images/originals/usdc.svg";
 import usdt from "images/originals/usdt.svg";
 import wbtc from "images/originals/wbtc.svg";
 import dsla from "images/originals/dsla.svg";
+import CustomButton from "./customButton";
 
 export default function Character() {
   const navigate = useNavigate();
@@ -429,7 +430,7 @@ export default function Character() {
           onChange={charNameChange}
           required
         />
-        <button onClick={buyFunc}>BUY Character</button>
+        <CustomButton onClick={buyFunc} text="Buy Character" />
       </div>
     </div>
   );

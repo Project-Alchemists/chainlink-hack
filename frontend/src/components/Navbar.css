@@ -20,12 +20,17 @@
     font-weight: 900;
 }
 .navbar > .navbar-items > span {
-    padding: 0 0 0 0.5rem;
+    padding: 0 0 0 1.5rem;
 }
 .navbar > .navbar-items > span > a {
     text-decoration: none;
     color: white;
+    transition: 0.5s;
 }
 .navbar > .navbar-items > span:first-child {
     padding: 0;
+}
+
+.navbar > .navbar-items > span > a:hover {
+    color: #62a89f;
 }

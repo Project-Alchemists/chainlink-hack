@@ -38,7 +38,7 @@ export default function Home() {
       <div className="help-section-indicator">
         <a href={"#help-section"}>
           <span>{"Help"}</span>
-          <img src={ChevronDown} />
+          <img src={ChevronDown} alt=""/>
         </a>
       </div>
       <div className="help-section" id="help-section">

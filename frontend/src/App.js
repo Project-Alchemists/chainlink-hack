@@ -15,7 +15,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/help" element={<Instructions />} />
+        <Route path="/help" element={<Instructions />} />  {/* not needed // remove */}
         <Route path="/buycharacter" element={<Character />} />
         <Route path="/characterlist" element={<CharList />} />
         <Route path="/mating" element={<Mating />} />
