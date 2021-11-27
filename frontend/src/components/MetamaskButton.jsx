@@ -20,11 +20,11 @@ const MetamaskButton = () => {
 	};
 
 	return (
-		<div>
-			<div>
+		
+			<>
 				<button onClick={connectWallet}>Connect Metamask</button>
-			</div>
-		</div>
+			</>
+		
 	);
 };
 
