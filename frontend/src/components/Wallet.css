@@ -1,62 +1,68 @@
 .wallet-container {
-	display: grid;
-	height: 100vh;
+  display: grid;
+  height: 100vh;
 }
 
 .wallet-master {
-	align-self: center;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	padding: 0 4rem;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 4rem;
 }
 
 .grid-item {
-	border: 2px solid #62a89f85;
-	height: 600px;
+  border: 2px solid #62a89f85;
+  height: 600px;
 }
 
 .wallet-chars {
-	display: grid;
-	padding: 10px;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-gap: 10px;
-	overflow: auto;
+  margin: 0 3rem;
+  margin-top: 6rem;
+
+  display: grid;
+  padding: 20px 50px 20px 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  overflow: auto;
 }
 
 .wallet-area {
-	height: 300px;
-	display: grid;
-	grid-template-columns: 2fr 1fr 2fr;
-	margin-top: 30%;
-	padding: 0px 50px;
-	border: 2px solid #62a89f85;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  margin-top: 30%;
+  padding: 0px 50px;
+  border: 2px solid #62a89f85;
 }
 
 .wallet-final {
-	align-self: center;
-	align-items: center;
-	justify-self: center;
+  align-self: center;
+  align-items: center;
+  justify-self: center;
 }
 
 .plus-sign {
-	color: white;
-	font-size: 4rem;
-	justify-self: center;
+  color: white;
+  font-size: 4rem;
+  justify-self: center;
 }
 
 .wallet-product-container {
-	border: 2px solid #62a89f85;
-	height: 300px;
-	margin-top: 30%;
+  border: 2px solid #62a89f85;
+  height: 300px;
+  margin-top: 30%;
 }
 
 .wallet-product {
-	border-radius: 10px;
-	box-shadow: var(--soft);
-	width: 200px;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: var(--soft);
+  width: 200px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.walletCharCard-button {
+  margin-top: 5px;
 }
