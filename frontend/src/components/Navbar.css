@@ -1,44 +1,48 @@
 .navbar {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 1.5rem;
-    color: white;
-    font-size: 1.2rem;
-    background-color: #00000044;
+  padding: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  background-color: #00000044;
 }
 .navbar > .navbar-logo {
-    font-weight: lighter;
-    font-family: var(--mmd);
-    text-transform: lowercase;
-    font-size: 20px;
+  font-weight: lighter;
+  font-family: var(--mmd);
+  text-transform: lowercase;
+  font-size: 20px;
 }
-.navbar > .navbar-logo > span > a{
-    text-decoration: none;
-    color: white;
+.navbar > .navbar-logo > span > a {
+  text-decoration: none;
+  color: white;
 }
 .navbar > .navbar-logo::first-letter {
-    font-weight: 900;
+  font-weight: 900;
+}
+.navbar > .navbar-items {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .navbar > .navbar-items > span {
-    padding: 0 0 0 1.5rem;
+  padding: 0 0 0 1.5rem;
 }
 .navbar > .navbar-items > span > a {
-    text-decoration: none;
-    color: white;
-    transition: 0.5s;
-    font-family: 'Comfortaa', cursive;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+  font-family: "Comfortaa", cursive;
 }
 .navbar > .navbar-items > span:first-child {
-    padding: 0;
+  padding: 0;
 }
 
 .navbar > .navbar-items > span > a:hover {
-    color: #62a89f;
+  color: #62a89f;
 }

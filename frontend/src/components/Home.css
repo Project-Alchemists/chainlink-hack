@@ -39,46 +39,58 @@
 }
 
 .help-section-indicator {
-    position: relative;
+  position: relative;
 
-    color: white;
-    font-size: large;
+  color: white;
+  font-size: large;
 
-    padding: 1rem;
-    top: -3rem;
+  padding: 1rem;
+  top: -3rem;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 .help-section-indicator img {
-    filter: invert(1);
+  filter: invert(1);
 }
 .help-section-indicator > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 
-    margin-left: auto;
-    text-decoration: none;
-    color: white;
+  margin-left: auto;
+  text-decoration: none;
+  color: white;
 }
 .help-section {
-    color: white;
-    background-color: #eeeeee55;
-    padding: 1rem;
-    border-radius: 1rem 1rem 0 0;
-    
-    counter-reset: instructions-counter;
+  color: white;
+  background-color: #eeeeee55;
+  padding: 1rem;
+  border-radius: 1rem 1rem 0 0;
+
+  counter-reset: instructions-counter;
 }
 .help-section div {
-    padding: 0.5rem;
-    color: white;
+  padding: 0.5rem;
+  color: white;
 }
 .help-section div::before {
-    counter-increment: instructions-counter;
-    content: counter(instructions-counter);
+  counter-increment: instructions-counter;
+  content: counter(instructions-counter);
 
-    color: grey;
-    margin-right: 0.5rem;
+  color: grey;
+  margin-right: 0.5rem;
+}
+.metaMask-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.metaMask-btn-txt {
+  font-size: 1rem;
 }
