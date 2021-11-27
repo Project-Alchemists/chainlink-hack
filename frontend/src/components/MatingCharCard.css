@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Major+Mono+Display&display=swap');
+
 .mating-char-item {
   /* border: solid red; */
   overflow: hidden;
@@ -19,6 +21,8 @@
 
 .MatingCharCard-name {
 	color: white;
+  font-family: 'Comfortaa', cursive;
+  font-weight: lighter;
 	margin-bottom: 5px;
 }
 
@@ -29,5 +33,5 @@
 
 .MatingCharCard-heart {
   width: 25px;
-  margin: 2px;
+  margin: 1px;
 }

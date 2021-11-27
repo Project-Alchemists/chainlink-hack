@@ -146,7 +146,7 @@ const CharList = props => {
           <div className="ration-buy">{rbutton}</div>
         </div>
         <div className="mating-main-button">
-          <CustomButton onClick={toMating} text="go to mating" />
+          <CustomButton onClick={toMating} text="mating" />
         </div>
       </div>
     </div>

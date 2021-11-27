@@ -4,7 +4,7 @@
 	padding: 10px;
 	cursor: pointer;
 
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: var(--soft);
 }
 
@@ -20,6 +20,6 @@
 
 .walletCharCard-heart {
 	width: 25px;
-	margin-right: 5px;
+	margin-right: 2px;
 	color: red;
 }

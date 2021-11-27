@@ -15,7 +15,7 @@ const Navbar = () => {
                   <Link to={"/buycharacter"}>{"Buy New"}</Link>
                </span>
                <span>
-                  <Link to={"/link1"}>{"Link 1"}</Link>
+                  <Link to={"/wallet"}>{"Wallet"}</Link>
                </span>
             </div>
          </nav>
