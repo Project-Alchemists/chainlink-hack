@@ -1,0 +1,17 @@
+.custom-button-styling{
+    all: unset;
+    border: 2px solid #62a89f;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--mmd);
+    text-transform: lowercase;
+    color: white;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.custom-button-styling:hover{
+    background-color: #62a89f;
+}

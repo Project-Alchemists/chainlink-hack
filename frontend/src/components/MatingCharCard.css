@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Major+Mono+Display&display=swap');
+
+.mating-char-item {
+  /* border: solid red; */
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+  width: fit-content;
+  min-width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  border: 2px solid #62a89f;
+  transition: 0.4s;
+  /* box-shadow: var(--soft); */
+}
+
+.mating-char-item:hover{
+  background-color: #62a89f3a;
+
+}
+
+.MatingCharCard-name {
+	color: white;
+  font-family: 'Comfortaa', cursive;
+  font-weight: lighter;
+	margin-bottom: 5px;
+}
+
+.MatingCharCard-health {
+	margin-top: 10px;
+	letter-spacing: 2px;
+}
+
+.MatingCharCard-heart {
+  width: 25px;
+  margin: 1px;
+}

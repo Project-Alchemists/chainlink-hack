@@ -1,0 +1,73 @@
+.wallet-container {
+  display: grid;
+  height: 100vh;
+}
+
+.wallet-master {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 4rem;
+}
+
+.grid-item {
+  /* border: 2px solid #62a89f85; */
+  height: 600px;
+}
+
+.wallet-chars {
+  margin: 0 3rem;
+  margin-top: 6rem;
+  display: grid;
+  padding: 20px 50px 20px 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  overflow: auto;
+  box-shadow: var(--soft);
+  border-radius: 20px;
+}
+
+.wallet-chars::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.wallet-chars::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+.wallet-chars::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border: 1px solid #62a89f;
+}
+
+.wallet-final {
+  align-self: center;
+  align-items: center;
+  justify-self: center;
+}
+
+.plus-sign {
+  color: white;
+  font-size: 4rem;
+  justify-self: center;
+}
+
+.wallet-product-container {
+  border: 2px solid #62a89f85;
+  height: 300px;
+  margin-top: 30%;
+}
+
+.walletCharCard-button {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0 5px 0;
+}
