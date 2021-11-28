@@ -15,6 +15,7 @@ contract WageToken is Ownable,ERC20Burnable{
     Character player;
     
     mapping(uint=>uint) salaryRetrieved;
+    event SalaryRetrieved(address indexed user,uint indexed tokenId,uint amount);
     
     uint public constant BASE_SALARY = 100;
     
@@ -25,36 +26,40 @@ contract WageToken is Ownable,ERC20Burnable{
     
     function payWage(uint tokenId) external {
         require(player.ownerOf(tokenId) == msg.sender,"Only token owner can retrieve wage");
-        require(player.getPlayerInfo(tokenId).lastFed < 10 days,"You can't earn on an empty stomach");
-        require(player.getPlayerInfo(tokenId).birthDate - block.timestamp > 60 days,"Kids don't get salaries");
-        require(salaryRetrieved[tokenId]-block.timestamp > 30 days,"Salary is paid once every month");
+        require(block.timestamp - player.getPlayerInfo(tokenId).lastFed < 10 days,"You can't earn on an empty stomach");
+        require(block.timestamp - player.getPlayerInfo(tokenId).birthDate > 60 days,"Kids don't get salaries");
+        require(block.timestamp - salaryRetrieved[tokenId] > 30 days,"Salary is paid once every month");
         PlayerPriceFeeds feed = PlayerPriceFeeds(registry.PriceFeedsContract());
         int currentPrice = feed.getPriceFeed(player.getPlayerInfo(tokenId).tetheredToken);
         int basePrice = player.getPlayerInfo(tokenId).tokenBaseline;
-        
+        uint amount;
         if(player.getPlayerInfo(tokenId).birthDate - block.timestamp > 90 days){
+            
             if (currentPrice > basePrice*3/2){
-            _mint(msg.sender,BASE_SALARY*6/10);
+                amount = BASE_SALARY*6/10;
             }
             else if(currentPrice < 7*basePrice/10){
-                _mint(msg.sender,BASE_SALARY*4/10);
+                amount = BASE_SALARY*4/10;
             }
             else{
-                _mint(msg.sender,BASE_SALARY/2);
+               amount = BASE_SALARY/2;
             }
         }
         else{
             if (currentPrice > basePrice*3/2){
-            _mint(msg.sender,BASE_SALARY*12/10);
+            amount = BASE_SALARY*12/10;
             }
             else if(currentPrice < 7*basePrice/10){
-                _mint(msg.sender,BASE_SALARY*8/10);
+               amount = BASE_SALARY*8/10;
             }
             else{
-                _mint(msg.sender,BASE_SALARY);
+                amount = BASE_SALARY;
             }
         }
+        _mint(msg.sender,amount);
         salaryRetrieved[tokenId] = block.timestamp;
+        emit SalaryRetrieved(msg.sender,tokenId,amount);
     }
-     
+
+
 }

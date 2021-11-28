@@ -7,7 +7,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
 import "./Registry.sol";
 import "./PriceFeeds.sol";
-
+import "./WageTokens.sol";
 contract Character is ERC721Enumerable,Ownable{
 
     using Counters for Counters.Counter;
@@ -16,6 +16,7 @@ contract Character is ERC721Enumerable,Ownable{
     Counters.Counter private _totalFemaleSales;
     
     Registry registry;    
+    WageToken wage;
 
     struct playerInfo{
         bool isMale;
@@ -34,8 +35,14 @@ contract Character is ERC721Enumerable,Ownable{
     mapping(uint=>playerInfo) players;
     mapping(uint=>string) imageCID;
     
-    constructor(address regAddress) ERC721("MetaPlayers","MTP"){
+    event playerBought(uint indexed tokenId,address indexed buyer,playerInfo Info);
+    event playerBorn(uint indexed tokenId,address indexed buyer,playerInfo Info);
+    event playerFed(uint indexed tokenId,address indexed owner,playerInfo Info);
+    event playerHealed(uint indexed tokenId,address indexed owner,playerInfo Info);
+
+    constructor(address regAddress,address wageAddress) ERC721("MetaPlayers","MTP"){
         registry = Registry(regAddress);
+        wage = WageToken(wageAddress);
     }
     
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory){
@@ -88,8 +95,8 @@ contract Character is ERC721Enumerable,Ownable{
         require(player1.isMale != player2.isMale,"Need two separate gender tokens to mate");
         require(block.timestamp - player1.lastMate >= 10 days &&
                 block.timestamp - player2.lastMate >= 10 days,"Players need 10 day cool down after mating");
-        require(player1.lastFed < 10 days && 
-                player2.lastFed < 10 days,"You can't make kids on an empty stomach");
+        require(block.timestamp - player1.lastFed < 10 days && 
+                block.timestamp - player2.lastFed < 10 days,"You can't make kids on an empty stomach");
         uint age1 = block.timestamp - player1.birthDate;
         uint age2 = block.timestamp - player2.birthDate;
         require(age1 > 60 days && age1 < 90 days && age2 > 60 days && age2 <90 days,"Only adults can be mated");
@@ -114,6 +121,7 @@ contract Character is ERC721Enumerable,Ownable{
                                                 0,
                                                 block.timestamp
                                                 );
+        emit playerBorn(_tokenId.current(),msg.sender,players[_tokenId.current()]);
         return players[_tokenId.current()];
     }
     
@@ -153,6 +161,7 @@ contract Character is ERC721Enumerable,Ownable{
                                                 block.timestamp
                                                 );
         _safeMint(msg.sender,_tokenId.current());
+        emit playerBought(_tokenId.current(),msg.sender,players[_tokenId.current()]);
         return players[_tokenId.current()];
     }
     
@@ -162,5 +171,26 @@ contract Character is ERC721Enumerable,Ownable{
     
     function getTokensMinted() external view returns(uint,uint){
         return (_totalMaleSales.current(),_totalFemaleSales.current());
+    }
+
+    function feedCharacter(uint tokenId) external {
+        require(_exists(tokenId),"Token does not exist");
+        require(wage.balanceOf(msg.sender) >= 20,"You do not have enough wage tokens to feed the player");
+        require(wage.allowance(msg.sender,address(this)) >= 20,"Allow this contract at least 20 tokens");
+        playerInfo storage player = players[tokenId];
+        require(block.timestamp - player.lastFed <= 20 days,"Token needs hospital");
+        player.lastFed = block.timestamp;
+        wage.burnFrom(msg.sender,20);
+        emit playerFed(tokenId,msg.sender,player);
+    }
+
+    function hospital(uint tokenId) external{
+        require(_exists(tokenId),"Token does not exist");
+        require(wage.balanceOf(msg.sender) >= 100,"You do not have enough wage tokens to feed the player");
+        require(wage.allowance(msg.sender,address(this)) >= 100,"Allow this contract at least 20 tokens");
+        playerInfo storage player = players[tokenId];
+        require(block.timestamp - player.lastFed > 20 days,"Token needs to only be fed");
+        wage.burnFrom(msg.sender,100);
+        emit playerHealed(tokenId,msg.sender,player);
     }
 }
