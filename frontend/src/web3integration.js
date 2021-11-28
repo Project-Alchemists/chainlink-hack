@@ -130,7 +130,7 @@ export const mate = (tokenId, partnerTokenId) => {
 
 export const mint = (isMale, tetheredToken) => {
   try {
-    const res = playerContract.mint(isMale, tetheredToken);
+    const res = playerContract.mint(isMale, tetheredToken, { value: 0 });
     console.log(res);
   } catch (error) {
     console.log(error);

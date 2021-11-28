@@ -15,6 +15,7 @@ import wbtc from "images/originals/wbtc.svg";
 import dsla from "images/originals/dsla.svg";
 import CustomButton from "./customButton";
 import { addCharacter } from "moralisIntegration";
+import { mint } from "web3integration";
 
 export default function Character() {
   const navigate = useNavigate();
@@ -70,6 +71,7 @@ export default function Character() {
     } else if (!newCharName) {
       alert("Enter a name for new Character");
     } else {
+      mint(selectedChar[1], 1666700000);
       console.log("Bought");
     }
   };
