@@ -71,7 +71,6 @@ export default function Character() {
       alert("Enter a name for new Character");
     } else {
       console.log("Bought");
-      addCharacter(newCharName, "crypto");
     }
   };
 
