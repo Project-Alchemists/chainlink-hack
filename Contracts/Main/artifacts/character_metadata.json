@@ -11,6 +11,11 @@
 						"internalType": "address",
 						"name": "regAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "wageAddress",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -111,6 +116,234 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastFed",
+								"type": "uint256"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Character.playerInfo",
+						"name": "Info",
+						"type": "tuple"
+					}
+				],
+				"name": "playerBorn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastFed",
+								"type": "uint256"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Character.playerInfo",
+						"name": "Info",
+						"type": "tuple"
+					}
+				],
+				"name": "playerBought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastFed",
+								"type": "uint256"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Character.playerInfo",
+						"name": "Info",
+						"type": "tuple"
+					}
+				],
+				"name": "playerFed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isMale",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tetheredToken",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "tokenBaseline",
+								"type": "int256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastMate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastFed",
+								"type": "uint256"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Character.playerInfo",
+						"name": "Info",
+						"type": "tuple"
+					}
+				],
+				"name": "playerHealed",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "FEMALE_SUPPLY",
 				"outputs": [
@@ -184,6 +417,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "feedCharacter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -272,6 +518,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "hospital",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -761,11 +1020,11 @@
 	},
 	"sources": {
 		"Main/Player.sol": {
-			"keccak256": "0x0cf77ddbd7994e2f566e6ab7b5e9ff2b1d810545c6102478b57ce0d9ca9b130e",
+			"keccak256": "0xc8af2788224d54bc28d9e276c3b93d33ea502c0aa4373dd2a5bf4dd6330e4ebf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cc82724bbcb6e636dc8d9941620e039817d74a73314a4bdd331f62aa2473494b",
-				"dweb:/ipfs/QmRVRCwH4i6NW5gbSnUaKXjbPGW578tZ41rd4AMqcJmW8M"
+				"bzz-raw://09f5ed5ae8ed2775dd1686ee4e1f727635b6d287efcc3f303bc982f39810375c",
+				"dweb:/ipfs/QmY6uqPis7NbCiW4JsLzWxmJRhpBDFt41tQbtrfMUZXyhh"
 			]
 		},
 		"Main/PriceFeeds.sol": {
@@ -784,108 +1043,148 @@
 				"dweb:/ipfs/QmZmRLnB5hUuNxkV4v42uRT31yNugFKxV4tura2uZxxJyd"
 			]
 		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
-			"keccak256": "0xcf02b12b43a19c47f55f3cb134bdb21e58bf40ed75aea99664b35d039f725719",
+		"Main/WageTokens.sol": {
+			"keccak256": "0xb842b3b85215ca0554447098005e334fd1bd3f57cd294ebbf8b0d7119f64df9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://690f336b242e4b5be0540e358dd50d45338bd83782ad2a0226a473fc8f918165",
-				"dweb:/ipfs/QmPnnme73tgoW5GZqGLHT7oA9u6866LbMqRyw4uNh1X7vS"
+				"bzz-raw://b67dc2cc79ba6b40e01b4dd10244451e61484c95604c198631de39b810ac7fef",
+				"dweb:/ipfs/QmQhugbQQPRpStvR9YXaDTLf3bz5gfC8DQRvd1wRvcdpDT"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
+			"keccak256": "0xa1b27b3f44ff825974e5268e8f63ad3b03add5b464880d860fbb8cae043e17f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad0fb4425453220f15bdb8c4e009052839804bb725797b6d8c02ee2271bc3c23",
+				"dweb:/ipfs/QmPtjdMxzEifPUEUa6cKX1yfTWjaZV6QtdwMdN6bEL9FBM"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0x53a0bb51b8a505e04aaf065de27c0e31cadf38194f8a9a6ec92b7bcd3c5826e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d7d7019db0d8c1256995eb44b2aabf1189120c0bd01efa653e0eabdbc8cf4742",
+				"dweb:/ipfs/QmZRiFEksts7Z2r1xnHb9Jqu4udHyTM6tQVTCyFosMXQAy"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc1452b054778f1926419196ef12ae200758a4ee728df69ae1cd13e5c16ca7df7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb252ec7657ba7a91be688cbd263090aa5379e504f488a62d06198e0d630322",
+				"dweb:/ipfs/QmW56fDiDirhWfWiKrycXE5UY6tTNtFrYx39ipnSs8mkYb"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+			"keccak256": "0xf5c24bf041db896602e865b967918933b9f4281922852141f955c78a4cfa2149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b546a911a3421f398f1520290f1d063beee4f00c2a16fba85b3cd99535a2258f",
+				"dweb:/ipfs/Qmb1TwGYGmi9rXzgbFG9x1H1yqLf4W9PTFxdxdKojdQXHk"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x842c66d5965ed0bf77f274732c2a93a7e2223d53171ec9cccc473bde75104ead",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cc9f9a6d9c1e2ca9cd191840c0e6017d22bf99d88b368137e43c67f63d17d1c",
+				"dweb:/ipfs/Qmd3vUSxY4fRi4AUFMkerjrMFEKRLGVJUGFmxazR1wnPXP"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol": {
-			"keccak256": "0x01644ba379efb5fd3226c0f97031c8dbc41c938ebbc5dff3aba175661b40ccfe",
+			"keccak256": "0x1ba5cf152c15dc0c785310feeb61e1f74387fc7bdc2aba5d90733f791606d4bf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f6db607bcde0c51128fe5de8f51ae3b9d3264163cc9d91224a52cd3db305b552",
-				"dweb:/ipfs/QmbZ7w1RrbtCgLihHpMSh8Po89BwEvLAjZkWcfysDGC9Xo"
+				"bzz-raw://38db14c62d6431df042a7ca07fd021ea52ccdbd03f0be2b5c4ab034a56126d38",
+				"dweb:/ipfs/QmbCHTCLP6bz8omQXrP8VuxFGdK9Hh3jqfrSTr38WNpTk4"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
-			"keccak256": "0xc6aeacb58cdf0835859bc075ab5176346c88232649f8e69d1331601d285d0b11",
+			"keccak256": "0x872ba21af7c1f0ae04a715beca31e8fcac764d6c8762940b0fe1bfb6ed8e86f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ed52ffb62caaaeac944b318964f5b06e2d4fe9c7cccebe6fe94e666951afe5a2",
-				"dweb:/ipfs/QmXBH6vmqEyf71sKkEe1q3TDJws94bu4SYTJV5V6fmx7h3"
+				"bzz-raw://497017741d74878b56a67ad51e98061bd9ec0e6e4fdbfef0e2ab51523f4c16de",
+				"dweb:/ipfs/QmWfkpRHksy8jFywqYxdmMqdkQ1hxrGTPoNBXbZ48zTvyv"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721Receiver.sol": {
-			"keccak256": "0xc835ab6011f8a818b75d090149a1689ef6fa3ce6b880fe5c64465929abca33de",
+			"keccak256": "0x483b106386dd309f168672928252a19f30c30efb4d17d4b8e2b0f587ca784a11",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6ab4fb0c21e3f66d49d4c51c043d00491eb99dc2b1846870cb5d43f8c801f66a",
-				"dweb:/ipfs/QmVPU6gCSzGcZkwgmLGhE947MXH642PQWNgaTGevhhxcCt"
+				"bzz-raw://189a39d066c6886ddbe86c79bb36d6cbe66e98bc6a94956e28f5503dae4ad406",
+				"dweb:/ipfs/QmT3s3PwCdXqHLJk26kcnedrRGTC9T18z52i9Be7PV9ppc"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
-			"keccak256": "0xcc3f5bfe4c8b5a2d1eb1e7049f79d8472d38013e3c2cfe14ff1f082e61848248",
+			"keccak256": "0x683793c78df81fc9033105d5c5e7173a3a295f94b55435129a385514213637e2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a3b9e1ab20f0dfb288410ccb8dbe12bc49a4d43a1f18d3dc8e63c841ec665fdf",
-				"dweb:/ipfs/Qmcq5mmGPtZpGGwG1h7DBGp9PaiPSHZs8VRmnTz8NR6FnQ"
+				"bzz-raw://02d4dc9c619d54284ee14261f5f2a3edc03ad654f8b6fe16f257789d5d58475b",
+				"dweb:/ipfs/QmTuGzVWvDKSmNAXUNKRFWTDv86QBpwmi2vbCCqjctvc8h"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
-			"keccak256": "0x8934019980e9569f3ac784af38cc53cd7c6a5bf9f2d625770b16b12b89a71354",
+			"keccak256": "0x42c041cfe2fba75264baa64c4c3c55b128e6667b54331df87028cc4da0a9606e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://366e5d0c24abe10e63e83ebcc1cf94f4c79abc86a5e32ba93210c6f70ab4f345",
-				"dweb:/ipfs/QmaYHQiGFJZATWmcu1qUL9VSwM8SqMKKn29RrEE3VtufTo"
+				"bzz-raw://ed91e7e168e51bce00363a70677e368528179e6f29105b1b3d38f8948e670a01",
+				"dweb:/ipfs/QmPr58W3vqF9EMQyh5yzweRW5M1jtpS4UEjSxreYqMWtzA"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-			"keccak256": "0x8a8492198609939f9ecbe8b4dbf6a6fb9b873aee8f70c210b6de3b313727b772",
+			"keccak256": "0x6052c25b1021f2b0e733fb52ca11948cb2f08cb66076397507243a6e8a8d7776",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://27efbd99d0c225b0b18dd27f0a44d8b1ddca3ea41ac2829d7b5396efd861d89a",
-				"dweb:/ipfs/QmSsPodgMpvF8D4Y2SrYvMWYSwBtC9qJC5xTyZYfsiTzEf"
+				"bzz-raw://32ac4547a76b28021a007853958284aa8a15a64f1aeec83cb797b7fd60a46b56",
+				"dweb:/ipfs/QmTJWQF8j586oaYNpdZv55xnzyHVQc68XN4eBNeiLbKX8d"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol": {
-			"keccak256": "0x4d31a0f80bf7b7e94d30339ce0d729160f90b92f7388b224c76ddaddbca16b29",
+			"keccak256": "0x9944d1038f27dcebff810d7ba16b3b8058b967173d76874fb72dd7cd84129656",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7353729caf6e83360220d29a321dace5f3bb5684293eae04fe1a8a526b1f3db8",
-				"dweb:/ipfs/QmfL7nLPVJmiDgFtYSZoM2VWcKDqCHqaUZj2V9ZZX8qzCm"
+				"bzz-raw://7c455cda07c5f8978c57e545ddde382552d3a55b6e3682e0f809ed07ec7defbe",
+				"dweb:/ipfs/QmXkoKbxyMcMzjYdkXi5t4t3ZjBQ81pj7AaanS9jhePxyt"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol": {
-			"keccak256": "0x00f8a1bd52713525eb90f70b64f028de5c075fb6298cc9de2e8f0c022e1595ff",
+			"keccak256": "0x7736c187e6f1358c1ea9350a2a21aa8528dec1c2f43b374a9067465a3a51f5d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4b5121409ef8f276add2cb646a4614809fb824012addf8f584d0bb2e0bb7ba53",
-				"dweb:/ipfs/QmdN1Yk9Xmskgk2Y6DWNX7EmXU5EtKroCGHiQrHpXSWRZp"
+				"bzz-raw://4fd625dca17657403af518cc6c8ab5c54c58898cf6e912ca2e1b0f3194ad0405",
+				"dweb:/ipfs/QmQVv7YeeKmaS11bg7YDTeeGDk6i7sV8LMMfohaLM4SiRu"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol": {
-			"keccak256": "0x5e2cfccb06a792ec63454e8cf6d9bc91915fbd9d7f70a3ee9d0e82e115bf8fc9",
+			"keccak256": "0x74f630d2664c1581a1cbd0730d4ba119b3a184ef90c65f3a934be4d16d0e58a1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://34731f9925aa7da281c8049db33ddcd09f252de44ab21557fb251ebd0ebec046",
-				"dweb:/ipfs/QmcPf4LQ3tTMrueMRr7K2w3p64cHNyLDjEiqxGoqpipdXE"
+				"bzz-raw://cadad0b133129f946a53e0f61fa387803ccdc010d9c794da0738bb7fc5001b66",
+				"dweb:/ipfs/QmQdTBpUT9WgDuCm7womDFiAnksepw6Fmi5Z5vv1H17Qr1"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Strings.sol": {
-			"keccak256": "0x1ca01170c4e9306009d086c132f39f1d8b23707fd3c706393105e715d9dcb24b",
+			"keccak256": "0x5fa25f305839292fab713256214f2868e0257d29826b14282bbd7f1e34f5af38",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://176d1be20be0bfc798afbd4c41deed1e4a93f0bca07446d8585a5886da63e240",
-				"dweb:/ipfs/QmVKjuixYBtJ42jxYQFgqukYfwFgPY5WHeA4E5fMFWAsY9"
+				"bzz-raw://b3de4074848249e00e1336db857e3fa8f78b4fe11d4a887f71050c22023b2132",
+				"dweb:/ipfs/QmbL6k2zFGndQPNPG7vCDivtjKam3quJSrEbRuVsNo4hBw"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/ERC165.sol": {
-			"keccak256": "0x3703c49b4d0dead0f1b8a394bad526caf50fa9c4fb84ba525442a5d4e9cb7a18",
+			"keccak256": "0x905cd0ecd91d1de79a4679d745b79cf852ca8ccda5d25d1c49c6bd17a5edc0cf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6a81adcd36f30eedcd0c2b7597e96861eb4a0a2bfb4a377d244ed868cb1c66d6",
-				"dweb:/ipfs/QmYgtmD9tzdRG5HYw9WfwnZ5DuLTu7jUWPV5LUWznaCa8B"
+				"bzz-raw://8dd1601fcd370546d8c06ea1902d7e7364fc490fbf0ebc3004230ef1f5db473c",
+				"dweb:/ipfs/Qmb8zbC3TjWFtcuyP3KEEaegMkPcfeKAcPrwzvkAoMR3cZ"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
-			"keccak256": "0xca6e686d3f19501229131c306da8b32cd888cbd3de3ee29036fb984228fedd7b",
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9f35d5d15a890b60f2be07aee3335868c45bc1355d03a53cb1796c4d374190ad",
-				"dweb:/ipfs/QmUM4K1WUr6Ut2Vjox6NFxT6TMun523TVV4eLZsoAonBRq"
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
 			]
 		},
 		"https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {

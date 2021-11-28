@@ -27,6 +27,10 @@ contract PlayerPriceFeeds is Ownable{
         priceFeed.push(AggregatorV3Interface(0x90142a6930ecF80F1d14943224C56CFe0CD0d347));
         //USDC
         priceFeed.push(AggregatorV3Interface(0x6F2bD4158F771E120d3692C45Eb482C16f067dec));
+        //USDT
+        priceFeed.push(AggregatorV3Interface(0x9A37E1abFC430B9f5E204CA9294809c1AF37F697));
+        //WBTC
+        priceFeed.push(AggregatorV3Interface(0xEF637736B220a58C661bfF4b71e03ca898DCC0Bd));
     }
     
     function addPriceFeed(address priceFeedAddress) external onlyOwner {
