@@ -4,22 +4,40 @@ import "./charList.css";
 import rationimage from "../images/icons/ration.svg";
 import { useNavigate } from "react-router";
 import CustomButton from "./customButton";
+import { balanceOf, getPlayerInfo } from "web3integration";
+import { useWeb3React } from "@web3-react/core";
+import { tokenOfOwnerByIndex } from "../web3integration";
 
-const CharList = props => {
-	const navigate = useNavigate();
+const CharList = (props) => {
+  const navigate = useNavigate();
 
-	const [ration, setRation] = useState(0);
-	const [rbutton, setRbutton] = useState([]);
+  const [ration, setRation] = useState(0);
+  const [rbutton, setRbutton] = useState([]);
+
+  const [length, setLength] = useState(0);
 
   useEffect(() => {
     setRbutton(
       ration > 0
         ? []
         : [
-            <CustomButton onClick={handleRation} text="buy ration" height={10}/>,
+            <CustomButton
+              onClick={handleRation}
+              text="buy ration"
+              height={10}
+            />,
           ]
     );
   }, [ration]); // render button based on ration amount
+
+  useEffect(() => {
+    console.log(length);
+    for (let index = 0; index < length; index++) {
+      tokenOfOwnerByIndex(account, index).then((val) => {
+        getPlayerInfo(parseInt(val.toString()));
+      });
+    }
+  }, [length]);
 
   const toMating = () => {
     navigate("/mating");
@@ -32,115 +50,46 @@ const CharList = props => {
 
   const [chars, setChars] = useState([
     {
-      token: "ETH",
+      token: "ONE",
       gender: "Male",
       age: 35,
       percent: 40,
       hearts: 2,
       foodLast: 6,
-      name: "test01",
-    },
-    {
-      token: "BUSD",
-      gender: "Female",
-      age: 22,
-      percent: 70,
-      hearts: 1,
-      foodLast: 6,
-      name: "test02",
-    },
-    {
-      token: "DAI",
-      gender: "Male",
-      age: 40,
-      percent: 100,
-      hearts: 4,
-      name: "test03",
-    },
-    {
-      token: "ONE",
-      gender: "Female",
-      age: 26,
-      percent: 30,
-      hearts: 0,
-      foodLast: 6,
-      name: "test04",
-    },
-    {
-      token: "SUSHI",
-      gender: "Male",
-      age: 32,
-      percent: 80,
-      hearts: 3,
-      name: "test05",
-    },
-    {
-      token: "LINK",
-      gender: "Female",
-      age: 31,
-      percent: 55,
-      hearts: 2,
-      foodLast: 6,
-      name: "test06",
-    },
-    {
-      token: "USDC",
-      gender: "Female",
-      age: 47,
-      percent: 75,
-      hearts: 3,
-      name: "test07",
-    },
-    {
-      token: "USDT",
-      gender: "Male",
-      age: 32,
-      percent: 76,
-      hearts: 1,
-      name: "test08",
-    },
-    {
-      token: "WBTC",
-      gender: "Female",
-      age: 54,
-      percent: 70,
-      hearts: 4,
-      foodLast: 6,
-      name: "test09",
-    },
-    {
-      token: "DSLA",
-      gender: "Female",
-      age: 45,
-      percent: 10,
-      hearts: 2,
-      name: "test10",
+      name: "rex",
     },
   ]);
+
+  const { account } = useWeb3React();
 
   return (
     <div className="list-main">
       <div className="list-child">
-      {chars.map((item, index) => (
-              <CharDisp
-                key={index}
-                uid={index}
-                token={item.token}
-                gender={item.gender}
-                name={item.name}
-                percent={item.percent}
-                hearts={item.hearts}
-                foodLast={item.foodLast}
-                age={item.age}
-              />
-            ))}
-
-        
+        {chars.map((item, index) => (
+          <CharDisp
+            key={index}
+            uid={index}
+            token={item.token}
+            gender={item.gender}
+            name={item.name}
+            percent={item.percent}
+            hearts={item.hearts}
+            foodLast={item.foodLast}
+            age={item.age}
+          />
+        ))}
       </div>
       <div className="sidebar-main">
         <div className="ration-main">
           <div className="ration-icon">
-            <img src={rationimage} className="icon-image" alt=""></img>
+            <img
+              src={rationimage}
+              className="icon-image"
+              alt=""
+              onClick={async () => {
+                await balanceOf(account).then((val) => setLength(val));
+              }}
+            ></img>
           </div>
           <div className="ration-amount">{ration}</div>
           <div className="ration-buy">{rbutton}</div>

@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className={"navbar"}>
         <div className={"navbar-logo"}>
           <span>
-            <Link to={"/"}>{"CHAINLINK"}</Link>
+            <Link to={"/"}>{"NFTlyf"}</Link>
           </span>
         </div>
         <div className={"navbar-items"}>

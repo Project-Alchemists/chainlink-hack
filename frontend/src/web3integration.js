@@ -1,3 +1,4 @@
+import { BigNumber } from "@ethersproject/bignumber";
 import { Contract } from "@ethersproject/contracts";
 import { addCharacter, updateCharacterInfo } from "moralisIntegration";
 import playerAbi from "./playerAbi.json";
@@ -50,11 +51,12 @@ export const approve = (toAddress, tokenId) => {
   }
 };
 
-export const balanceOf = (address) => {
+export const balanceOf = async (address) => {
   try {
-    playerContract.balanceOf(address).then((res) => {
-      console.log(res);
+    const res = await playerContract.balanceOf(address).then((res) => {
+      return parseInt(res.toString());
     });
+    return res;
   } catch (error) {
     console.log(error);
   }
@@ -128,10 +130,13 @@ export const mate = (tokenId, partnerTokenId) => {
   }
 };
 
-export const mint = (isMale, tetheredToken) => {
+export const mint = async (isMale, tetheredToken) => {
   try {
-    const res = playerContract.mint(isMale, tetheredToken, { value: 0 });
-    console.log(res);
+    const tx = await playerContract.mint(isMale, tetheredToken, {
+      value: Math.pow(10, 18).toString(),
+    });
+    const receipt = await tx.wait();
+    console.log(receipt);
   } catch (error) {
     console.log(error);
   }
@@ -224,11 +229,14 @@ export const tokenByIndex = (index) => {
   }
 };
 
-export const tokenOfOwnerByIndex = (owner, index) => {
+export const tokenOfOwnerByIndex = async (owner, index) => {
   try {
-    playerContract.tokenOfOwnerByIndex(owner, index).then((res) => {
-      console.log(res);
-    });
+    const res = await playerContract
+      .tokenOfOwnerByIndex(owner, index)
+      .then((res) => {
+        return res;
+      });
+    return res;
   } catch (error) {
     console.log(error);
   }

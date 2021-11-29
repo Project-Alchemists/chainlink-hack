@@ -43,7 +43,7 @@ export default function Character() {
     false,
   ]);
 
-  const [cselected, setC] = useState(false);
+  const [cselected, setC] = useState();
 
   const handleCrypto = (input) => {
     var temp = [];
@@ -53,7 +53,7 @@ export default function Character() {
     }
 
     crypto[input] ? (temp[input] = false) : (temp[input] = true);
-    crypto[input] ? setC(false) : setC(true);
+    setC(input);
 
     setCrypto(temp);
   };
@@ -71,7 +71,7 @@ export default function Character() {
     } else if (!newCharName) {
       alert("Enter a name for new Character");
     } else {
-      mint(selectedChar[1], 1666700000);
+      const tokenId = mint(selectedChar[1], cselected);
       console.log("Bought");
     }
   };

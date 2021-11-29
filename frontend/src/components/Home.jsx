@@ -28,7 +28,7 @@ export default function Home() {
 
       </div> */}
       <div className="home-mid">
-        <div className="home-title">Chainlink</div>
+        <div className="home-title">NFTlyf</div>
         {/* <div className="home-start" onClick={startFunc}> */}
         <CustomButton
           text="Mint Token!"
