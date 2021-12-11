@@ -1,4 +1,4 @@
-# chainlink-hack
+# NFTLyf - Chainlink Fall 2021 Hackathon
 
 ## Contract address:
 
