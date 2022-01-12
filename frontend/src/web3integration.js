@@ -1,6 +1,8 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import { Contract } from "@ethersproject/contracts";
 import { addCharacter, updateCharacterInfo } from "moralisIntegration";
+import { setPlayerContract, setWagesContract } from "redux/actions";
+import { store } from "redux/store";
 import playerAbi from "./playerAbi.json";
 import wageAbi from "./wageAbi.json";
 
@@ -11,12 +13,12 @@ export const connectContracts = (signer) => {
   // const registryAbi = [];
 
   playerContract = new Contract(
-    "0x7aa90577E2593eecEA526b1876B2ef7D093A7895",
+    "0x073006ec3686Bbcd8aF614e86a2C19EAeA675257",
     playerAbi,
     signer
   );
   wagesContract = new Contract(
-    "0x2deeAD3fee7cd8a6Ff84805050Bd092c0d77C0d3",
+    "0x2a696b7E45E7336760c819d4A63E948a795b5fEA",
     wageAbi,
     signer
   );
@@ -31,9 +33,12 @@ export const connectContracts = (signer) => {
   //   signer
   // );
 
-  playerContract.on("playerBought", (tokenId, buyer, Info) => {
-    addCharacter(Info.name, tokenId);
-  });
+  // playerContract.on("playerBought", (tokenId, buyer, Info) => {
+  //   addCharacter(Info.name, tokenId.toString());
+  // });
+
+  store.dispatch(setPlayerContract(playerContract));
+  store.dispatch(setWagesContract(wagesContract));
 
   wagesContract.on("SalaryRetrieved", (user, tokenId, amount) => {
     updateCharacterInfo({ token: tokenId, lastSalary: new Date() });
@@ -83,9 +88,8 @@ export const getApproved = (tokenId) => {
 
 export const getPlayerInfo = (tokenId) => {
   try {
-    playerContract.getPlayerInfo(tokenId).then((res) => {
-      console.log(res);
-    });
+    const res = playerContract.getPlayerInfo(tokenId).then((res) => res);
+    return res;
   } catch (error) {
     console.log(error);
   }
@@ -130,13 +134,13 @@ export const mate = (tokenId, partnerTokenId) => {
   }
 };
 
-export const mint = async (isMale, tetheredToken) => {
+export const mint = async (isMale, tetheredToken, name) => {
   try {
     const tx = await playerContract.mint(isMale, tetheredToken, {
       value: Math.pow(10, 18).toString(),
     });
     const receipt = await tx.wait();
-    console.log(receipt);
+    addCharacter(name, receipt.events[0].args[2].toString());
   } catch (error) {
     console.log(error);
   }
@@ -242,11 +246,10 @@ export const tokenOfOwnerByIndex = async (owner, index) => {
   }
 };
 
-export const tokenUri = (tokenId) => {
+export const tokenUri = async (tokenId) => {
   try {
-    playerContract.tokenUri(tokenId).then((res) => {
-      console.log(res);
-    });
+    const res = await playerContract.tokenURI(tokenId).then((res) => res);
+    return res;
   } catch (error) {
     console.log(error);
   }
@@ -379,8 +382,9 @@ export const wageOwner = () => {
 
 export const payWage = (tokenId) => {
   try {
-    const res = wagesContract.payWage(tokenId);
-    console.log(res);
+    wagesContract.payWage(tokenId).then((res) => {
+      console.log(res);
+    });
   } catch (error) {
     console.log(error);
   }

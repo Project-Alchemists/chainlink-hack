@@ -1,6 +1,6 @@
 :root {
   --soft: inset 5px 5px 10px #0e0e0e, inset -10px -10px 10px #252525;
-  --mmd: 'Major Mono Display', monospace;
+  --mmd: "Major Mono Display", monospace;
 }
 
 .chardisp-main {
@@ -27,6 +27,7 @@
   padding: 10px 0 5px 0;
   border-radius: 10px;
   box-shadow: var(--soft);
+  z-index: 100;
 }
 
 .list-image {
@@ -179,11 +180,11 @@
   width: 40px;
 }
 
-.list-eat{
+.list-eat {
   width: 40px;
 }
 
-.list-hosp{
+.list-hosp {
   width: 50px;
 }
 

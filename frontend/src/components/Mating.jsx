@@ -1,27 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Mating.css";
 import MatingCharCard from "./MatingCharCard";
 import fheart from "../images/icons/heart-solid.svg";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "./customButton";
+import { useWeb3React } from "@web3-react/core";
+import {
+  balanceOf,
+  getPlayerInfo,
+  mate,
+  tokenOfOwnerByIndex,
+  tokenUri,
+} from "web3integration";
+import { fetchCharacter } from "moralisIntegration";
+import { useSelector } from "react-redux";
 
 export default function Mating() {
   const navigate = useNavigate();
+  const [length, setLength] = useState(0);
+  const { account } = useWeb3React();
+  const state = useSelector((state) => state);
 
-  const [charList, setCharList] = useState([
-    { name: "Sanskar", gender: "male" },
-    { name: "Krimshanu", gender: "male" },
-    { name: "Ritvij", gender: "male" },
-    { name: "Arihant", gender: "male" },
-    { name: "Shreya", gender: "female" },
-    { name: "Aditi", gender: "female" },
-  ]);
-  const [maleCharList] = useState(
+  const [charList, setCharList] = useState([]);
+
+  useEffect(async () => {
+    await balanceOf(account).then((val) => {
+      setLength(val);
+      setCharList([]);
+    });
+  }, [account, state]);
+
+  useEffect(() => {
+    for (let index = 0; index < length; index++) {
+      tokenOfOwnerByIndex(account, index).then(async (val) => {
+        const info = await getPlayerInfo(parseInt(val.toString())).then(
+          (info) => info
+        );
+        const name = await fetchCharacter(val.toString());
+        const cid = await tokenUri(val.toString());
+        setCharList((prev) => [
+          ...prev,
+          {
+            name: name || val.toString(),
+            gender: info.isMale ? "male" : "female",
+            tokenId: val,
+            cid,
+          },
+        ]);
+      });
+    }
+  }, [length]);
+
+  useEffect(() => {
+    setMaleCharList(
+      charList.filter((item) => {
+        return item.gender === "male";
+      })
+    );
+    setFemaleCharList(
+      charList.filter((item) => {
+        return item.gender === "female";
+      })
+    );
+  }, [charList]);
+
+  const [maleCharList, setMaleCharList] = useState(
     charList.filter((item) => {
       return item.gender === "male";
     })
   );
-  const [femaleCharList] = useState(
+  const [femaleCharList, setFemaleCharList] = useState(
     charList.filter((item) => {
       return item.gender === "female";
     })
@@ -47,13 +95,16 @@ export default function Mating() {
       setMateFemale();
     }
   };
-  const mateFunc = () => {
+  const mateFunc = async () => {
     if ((!mateMale || !mateFemale) && !mateStatus) {
       alert("Choose mates!!");
+      return;
     } else {
+      setMateStatus(true);
+      mate(mateMale.tokenId, mateFemale.tokenId);
       setMateMale();
       setMateFemale();
-      setMateStatus((prev) => !prev);
+      setMateStatus(false);
     }
   };
   return (
@@ -69,6 +120,7 @@ export default function Mating() {
                 selectFunc={selectFunc}
                 percent={100}
                 hearts={3}
+                cid={item.cid}
               />
             ))}
           </div>
@@ -85,6 +137,7 @@ export default function Mating() {
                       deselectFunc={deselectFunc}
                       percent={100}
                       hearts={4}
+                      cid={mateMale.cid}
                     />
                   )}
                 </div>
@@ -103,6 +156,7 @@ export default function Mating() {
                       deselectFunc={deselectFunc}
                       percent={100}
                       hearts={4}
+                      cid={mateFemale.cid}
                     />
                   )}
                 </div>
@@ -146,6 +200,7 @@ export default function Mating() {
                 selectFunc={selectFunc}
                 percent={100}
                 hearts={4}
+                cid={item.cid}
               />
             ))}
           </div>

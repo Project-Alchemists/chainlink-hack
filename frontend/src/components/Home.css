@@ -65,23 +65,14 @@
 }
 .help-section {
   color: white;
-  background-color: #eeeeee55;
   padding: 1rem;
   border-radius: 1rem 1rem 0 0;
-
-  counter-reset: instructions-counter;
 }
 .help-section div {
   padding: 0.5rem;
   color: white;
 }
-.help-section div::before {
-  counter-increment: instructions-counter;
-  content: counter(instructions-counter);
 
-  color: grey;
-  margin-right: 0.5rem;
-}
 .metaMask-btn {
   display: flex;
   align-items: center;

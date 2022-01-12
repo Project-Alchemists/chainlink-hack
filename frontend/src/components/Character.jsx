@@ -71,7 +71,7 @@ export default function Character() {
     } else if (!newCharName) {
       alert("Enter a name for new Character");
     } else {
-      const tokenId = mint(selectedChar[1], cselected);
+      const tokenId = mint(selectedChar[1], cselected, newCharName);
       console.log("Bought");
     }
   };

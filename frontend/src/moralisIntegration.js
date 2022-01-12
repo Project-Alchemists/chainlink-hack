@@ -36,3 +36,12 @@ export const updateCharacterInfo = ({
     return char.save();
   });
 };
+
+export const fetchCharacter = async (tokenId) => {
+  const Character = Moralis.Object.extend("Character");
+  const query = new Moralis.Query(Character);
+  query.equalTo("token_id", tokenId);
+  const results = await query.find();
+  if (results.length < 1) return;
+  return results[0].attributes.name;
+};
